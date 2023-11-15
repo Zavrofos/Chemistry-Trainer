@@ -1,5 +1,6 @@
 ﻿using GameModelDir;
 using GameViewDir;
+using UnityEngine;
 
 namespace Cursor
 {
@@ -16,7 +17,13 @@ namespace Cursor
         
         public void Update()
         {
-            
+            GameObject target = _gameModel.CursorModel.TargetAtGunPoint;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit))
+            {
+                if(hit.collider.gameObject == target) return;
+                _gameModel.CursorModel.ChangeTarget(hit.collider.gameObject);
+            }
         }
     }
 }
