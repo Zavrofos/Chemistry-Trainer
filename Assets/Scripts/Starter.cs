@@ -12,6 +12,7 @@ public class Starter : MonoBehaviour
     [HideInInspector] public GameModel GameModel;
     public GameView GameView;
     public List<IPresenter> Presenters;
+    public List<IUpdater> Updaters;
 
     private void Awake()
     {
@@ -25,6 +26,14 @@ public class Starter : MonoBehaviour
     private void Start()
     {
         GameModel.Initialize();
+    }
+
+    private void Update()
+    {
+        foreach (var updater in Updaters)
+        {
+            updater.Update();
+        }
     }
 
     private void OnEnable()
