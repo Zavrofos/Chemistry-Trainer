@@ -2,13 +2,14 @@
 using Description_Objects;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Elements
+namespace Capacity
 {
     [Serializable]
-    public class ElementView : MonoBehaviour
+    public class CapacityView : MonoBehaviour
     {
-        public ElementDescr Description;
+        public ElementDescr InitialElement;
         public GameObject InfoWindow;
         public TMP_Text InfoText;
     }

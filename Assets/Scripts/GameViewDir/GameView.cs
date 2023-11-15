@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using Capacity;
 using Description_Objects;
 using Description_Scripts;
-using Elements;
 using UnityEngine;
 
 namespace GameViewDir
@@ -9,7 +9,7 @@ namespace GameViewDir
     public class GameView : MonoBehaviour
     {
         public List<ReactionDesc> Reactions;
-        public List<ElementView> Elements;
-        public Dictionary<string, ElementView> CurrentElements = new();
+        public List<CapacityView> Elements;
+        public Dictionary<string, CapacityView> CurrentElements = new();
     }
 }

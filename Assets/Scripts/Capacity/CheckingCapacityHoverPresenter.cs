@@ -2,14 +2,14 @@
 using GameViewDir;
 using UnityEngine;
 
-namespace Elements
+namespace Capacity
 {
-    public class CheckingElementHoverPresenter : IPresenter
+    public class CheckingCapacityHoverPresenter : IPresenter
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
 
-        public CheckingElementHoverPresenter(GameModel gameModel, GameView gameView)
+        public CheckingCapacityHoverPresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
@@ -27,15 +27,15 @@ namespace Elements
 
         private void OnCheckElementTarget(GameObject target)
         {
-            foreach (var element in _gameView.CurrentElements.Values)
+            foreach (var capacityView in _gameView.CurrentElements.Values)
             {
-                if (element.gameObject == target)
+                if (capacityView.gameObject == target)
                 {
-                    _gameModel.ElementsMap[element.Description.Name].OpenInformationWindow();
+                    _gameModel.ElementsMap[capacityView.InitialElement.Name].OpenInformationWindow();
                 }
-                else if (_gameModel.ElementsMap[element.Description.Name].IsOpenInformationWindow)
+                else if (_gameModel.ElementsMap[capacityView.InitialElement.Name].IsOpenInformationWindow)
                 {
-                    _gameModel.ElementsMap[element.Description.Name].CloseInformationWindow();
+                    _gameModel.ElementsMap[capacityView.InitialElement.Name].CloseInformationWindow();
                 }
             }
         }

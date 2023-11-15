@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Capacity;
 using Cursor;
 using Description_Objects;
 using Description_Scripts;
-using Elements;
 using GameModelDir;
 using GameViewDir;
 using UnityEngine;
@@ -22,7 +22,7 @@ public class Starter : MonoBehaviour
         Presenters = new List<IPresenter>()
         {
             new StartGameInitializePresenter(GameModel, GameView),
-            new CheckingElementHoverPresenter(GameModel, GameView)
+            new CheckingCapacityHoverPresenter(GameModel, GameView)
         };
         Updaters = new List<IUpdater>()
         {

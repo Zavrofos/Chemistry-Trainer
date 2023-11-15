@@ -3,8 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Capacity;
 using Effects;
-using Elements;
 using GameViewDir;
 
 namespace GameModelDir
@@ -13,13 +13,13 @@ namespace GameModelDir
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
-        private Dictionary<Element, List<IPresenter>> _elementsPresenters;
+        private Dictionary<Capacity.Capacity, List<IPresenter>> _elementsPresenters;
 
         public StartGameInitializePresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
-            _elementsPresenters = new Dictionary<Element, List<IPresenter>>();
+            _elementsPresenters = new Dictionary<Capacity.Capacity, List<IPresenter>>();
         }
         
         public void Subscribe()
@@ -47,18 +47,18 @@ namespace GameModelDir
 
             foreach (var elementDescr in elementsDescription)
             {
-                Element newElement = new Element(elementDescr.Description.Name, elementDescr.Description.Formula, elementDescr.Description.EnvironmentType);
+                Capacity.Capacity newCapacity = new Capacity.Capacity(elementDescr.InitialElement.Name, elementDescr.InitialElement.Formula, elementDescr.InitialElement.EnvironmentType);
 
                 List<IPresenter> Presenters = new()
                 {
-                    new OpenCloseInfoWindowPresenter(newElement, elementDescr),
-                    new ChangeTextInfoPresenter(newElement, elementDescr)
+                    new OpenCloseInfoWindowPresenter(newCapacity, elementDescr),
+                    new ChangeTextInfoPresenter(newCapacity, elementDescr)
                 };
                 
-                _elementsPresenters.Add(newElement, Presenters);
+                _elementsPresenters.Add(newCapacity, Presenters);
                 
-                _gameModel.ElementsMap.Add(elementDescr.Description.Name, newElement);
-                _gameView.CurrentElements.Add(elementDescr.Description.Name, elementDescr);
+                _gameModel.ElementsMap.Add(elementDescr.InitialElement.Name, newCapacity);
+                _gameView.CurrentElements.Add(elementDescr.InitialElement.Name, elementDescr);
             }
 
             foreach (var reactionDesc in reactionDescription)
