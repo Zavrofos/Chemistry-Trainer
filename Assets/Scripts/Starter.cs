@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Cursor;
 using Description_Objects;
 using Description_Scripts;
+using Elements;
 using GameModelDir;
 using GameViewDir;
 using UnityEngine;
@@ -20,7 +21,8 @@ public class Starter : MonoBehaviour
         GameModel = new GameModel();
         Presenters = new List<IPresenter>()
         {
-            new StartGameInitializePresenter(GameModel, GameView)
+            new StartGameInitializePresenter(GameModel, GameView),
+            new CheckingElementHoverPresenter(GameModel, GameView)
         };
         Updaters = new List<IUpdater>()
         {

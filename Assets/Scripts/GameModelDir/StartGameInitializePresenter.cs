@@ -1,8 +1,10 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Effects;
+using Elements;
 using GameViewDir;
 
 namespace GameModelDir
@@ -11,11 +13,13 @@ namespace GameModelDir
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
+        private Dictionary<Element, List<IPresenter>> _elementsPresenters;
 
         public StartGameInitializePresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
+            _elementsPresenters = new Dictionary<Element, List<IPresenter>>();
         }
         
         public void Subscribe()
@@ -26,6 +30,14 @@ namespace GameModelDir
         public void UnSubscribe()
         {
             _gameModel.Initialized += OnInitializeStartGame;
+            
+            foreach (var presenters in _elementsPresenters.Values)
+            {
+                foreach (var presenter in presenters)
+                {
+                    presenter.UnSubscribe();
+                }
+            }
         }
 
         private void OnInitializeStartGame()
@@ -35,16 +47,30 @@ namespace GameModelDir
 
             foreach (var elementDescr in elementsDescription)
             {
-                _gameModel.ElementsMap.Add(elementDescr.Description.Name, new Element(elementDescr.Description.Name, 
-                    elementDescr.Description.Formula, 
-                    elementDescr.Description.EnvironmentType));
+                Element newElement = new Element(elementDescr.Description.Name, elementDescr.Description.Formula, elementDescr.Description.EnvironmentType);
+
+                List<IPresenter> Presenters = new()
+                {
+                    new OpenCloseInfoWindowPresenter(newElement, elementDescr)
+                };
                 
+                _elementsPresenters.Add(newElement, Presenters);
+                
+                _gameModel.ElementsMap.Add(elementDescr.Description.Name, newElement);
                 _gameView.CurrentElements.Add(elementDescr.Description.Name, elementDescr);
             }
 
             foreach (var reactionDesc in reactionDescription)
             {
                 _gameModel.ReactionsMap.Add(CreateKey(reactionDesc.Elements), new Reaction(reactionDesc.Elements, reactionDesc.ResultElements, CreateEffects(reactionDesc.Effects)));
+            }
+            
+            foreach (var presenters in _elementsPresenters.Values)
+            {
+                foreach (var presenter in presenters)
+                {
+                    presenter.Subscribe();
+                }
             }
         }
 
