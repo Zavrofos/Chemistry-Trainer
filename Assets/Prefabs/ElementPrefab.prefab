@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Description: {fileID: 0}
+  InfoWindow: {fileID: 7220352960681428089}
 --- !u!136 &4742529593960094310
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -298,7 +299,7 @@ Transform:
   m_GameObject: {fileID: 7220352960681428089}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.201, z: 0}
   m_LocalScale: {x: 0.013510001, y: 0.1, z: 0.56110865}
   m_ConstrainProportionsScale: 0
   m_Children: []
