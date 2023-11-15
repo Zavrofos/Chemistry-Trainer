@@ -1,5 +1,6 @@
 ﻿using System;
 using Description_Objects;
+using TMPro;
 using UnityEngine;
 
 namespace Elements
@@ -9,5 +10,6 @@ namespace Elements
     {
         public ElementDescr Description;
         public GameObject InfoWindow;
+        public TMP_Text InfoText;
     }
 }

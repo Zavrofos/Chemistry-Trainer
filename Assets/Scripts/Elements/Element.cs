@@ -10,6 +10,7 @@ public class Element
 
     public event Action OpenedInfoWindow;
     public event Action CloseInfoWindow;
+    public event Action<string> ChangedTextInfo;
 
     public Element(string name, string formula, EnvironmentType environmentType)
     {
@@ -28,5 +29,10 @@ public class Element
     {
         IsOpenInformationWindow = false;
         CloseInfoWindow?.Invoke();
+    }
+
+    public void ChangeText(string newText)
+    {
+        ChangedTextInfo?.Invoke(newText);
     }
 }

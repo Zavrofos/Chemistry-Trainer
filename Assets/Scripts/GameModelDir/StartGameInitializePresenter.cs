@@ -58,6 +58,7 @@ namespace GameModelDir
                 
                 _gameModel.ElementsMap.Add(elementDescr.Description.Name, newElement);
                 _gameView.CurrentElements.Add(elementDescr.Description.Name, elementDescr);
+                newElement.ChangeText(newElement.Name);
             }
 
             foreach (var reactionDesc in reactionDescription)
