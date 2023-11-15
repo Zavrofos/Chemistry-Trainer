@@ -1,19 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using Description_Objects;
+using UnityEngine;
 
 public class GameModel
 {
-    public void ChangeColor(Color color)
+    public Dictionary<string, Element> ElementsMap;
+    public Dictionary<string[], Reaction> ReactionsMap;
+    public event Action Initialized;
+
+    public GameModel()
     {
-
+        ElementsMap = new Dictionary<string, Element>();
+        ReactionsMap = new Dictionary<string[], Reaction>();
     }
-
-    public void AddGaze()
-    {
-        
-    }
-
+    
     public void Initialize()
     {
-        
+        Initialized?.Invoke();
     }
 }
