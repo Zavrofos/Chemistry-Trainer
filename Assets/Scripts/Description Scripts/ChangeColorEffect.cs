@@ -8,7 +8,7 @@ namespace Description_Scripts
         public Color Color;
         public override void SetEffect(GameModel model)
         {
-            model.ChangeColor(Color);
+            
         }
     }
 }

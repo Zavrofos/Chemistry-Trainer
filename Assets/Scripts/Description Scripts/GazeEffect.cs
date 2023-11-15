@@ -7,7 +7,7 @@ namespace Description_Scripts
     {
         public override void SetEffect(GameModel model)
         {
-            model.AddGaze();
+            
         }
     }
 }
