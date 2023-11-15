@@ -62,7 +62,7 @@ namespace GameModelDir
             IEffect[] effects = new IEffect[effectsDescrs.Length];
             for (int i = 0; i < effectsDescrs.Length; i++)
             {
-                effects[i] = effectsDescrs[i].SetEffect();
+                effects[i] = effectsDescrs[i].GetEffect();
             }
 
             return effects;
