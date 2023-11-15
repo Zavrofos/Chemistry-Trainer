@@ -51,14 +51,14 @@ namespace GameModelDir
 
                 List<IPresenter> Presenters = new()
                 {
-                    new OpenCloseInfoWindowPresenter(newElement, elementDescr)
+                    new OpenCloseInfoWindowPresenter(newElement, elementDescr),
+                    new ChangeTextInfoPresenter(newElement, elementDescr)
                 };
                 
                 _elementsPresenters.Add(newElement, Presenters);
                 
                 _gameModel.ElementsMap.Add(elementDescr.Description.Name, newElement);
                 _gameView.CurrentElements.Add(elementDescr.Description.Name, elementDescr);
-                newElement.ChangeText(newElement.Name);
             }
 
             foreach (var reactionDesc in reactionDescription)
@@ -72,6 +72,17 @@ namespace GameModelDir
                 {
                     presenter.Subscribe();
                 }
+            }
+
+            InitializeTextInfo();
+        }
+
+
+        private void InitializeTextInfo()
+        {
+            foreach (var value in _gameModel.ElementsMap.Values)
+            {
+                value.ChangeText(value.Formula);
             }
         }
 
