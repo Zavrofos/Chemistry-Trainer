@@ -8,5 +8,6 @@ namespace Elements
     public class ElementView : MonoBehaviour
     {
         public ElementDescr Description;
+        public GameObject InfoWindow;
     }
 }
