@@ -10,7 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 398f27c8819f4f98b26528cf4b57dd93, type: 3}
-  m_Name: "\u0412\u043E\u0434\u043E\u0440\u043E\u0434 \u0438 \u043A\u0438\u0441\u043B\u043E\u0440\u043E\u0434"
+  m_Name: Hydrogen_Oxygen
   m_EditorClassIdentifier: 
-  Elements: []
-  ResultElements: []
+  Elements:
+  - Hydrogen
+  - Oxygen
+  ResultElements:
+  - Water
+  Effects:
+  - {fileID: 11400000, guid: a88640d4e14759d41868613a1ffc9433, type: 2}
+  - {fileID: 11400000, guid: 5550a2b1b0dd2a84180e7d6cd816e30d, type: 2}

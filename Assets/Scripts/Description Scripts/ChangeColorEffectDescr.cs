@@ -8,7 +8,7 @@ namespace Description_Scripts
     public class ChangeColorEffectDescr : EffectDescr
     {
         public Color Color;
-        public override IEffect SetEffect()
+        public override IEffect GetEffect()
         {
             return new ChangeColorEffect(Color);
         }

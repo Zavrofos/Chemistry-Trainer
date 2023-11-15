@@ -6,5 +6,5 @@ using UnityEngine;
 
 public abstract class EffectDescr : ScriptableObject
 {
-    public abstract IEffect SetEffect();
+    public abstract IEffect GetEffect();
 }

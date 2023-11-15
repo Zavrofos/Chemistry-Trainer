@@ -35,7 +35,11 @@ namespace GameModelDir
 
             foreach (var elementDescr in elementsDescription)
             {
-                _gameModel.ElementsMap.Add(elementDescr.Name, new Element(elementDescr.Name, elementDescr.Formula, elementDescr.EnvironmentType));
+                _gameModel.ElementsMap.Add(elementDescr.Description.Name, new Element(elementDescr.Description.Name, 
+                    elementDescr.Description.Formula, 
+                    elementDescr.Description.EnvironmentType));
+                
+                _gameView.CurrentElements.Add(elementDescr.Description.Name, elementDescr);
             }
 
             foreach (var reactionDesc in reactionDescription)
@@ -62,7 +66,7 @@ namespace GameModelDir
             IEffect[] effects = new IEffect[effectsDescrs.Length];
             for (int i = 0; i < effectsDescrs.Length; i++)
             {
-                effects[i] = effectsDescrs[i].SetEffect();
+                effects[i] = effectsDescrs[i].GetEffect();
             }
 
             return effects;
