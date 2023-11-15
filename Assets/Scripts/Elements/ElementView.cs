@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Description_Objects;
+using UnityEngine;
 
-namespace Elements
+namespace GameViewDir
 {
     public class ElementView : MonoBehaviour
     {
-        
+        public ElementDescr Description;
     }
 }
