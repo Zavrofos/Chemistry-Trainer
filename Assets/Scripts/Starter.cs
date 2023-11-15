@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cursor;
 using Description_Objects;
 using Description_Scripts;
 using GameModelDir;
@@ -20,6 +21,10 @@ public class Starter : MonoBehaviour
         Presenters = new List<IPresenter>()
         {
             new StartGameInitializePresenter(GameModel, GameView)
+        };
+        Updaters = new List<IUpdater>()
+        {
+            new HoverUpdater(GameModel, GameView)
         };
     }
 
