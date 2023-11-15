@@ -1,8 +1,10 @@
-﻿using Description_Objects;
+﻿using System;
+using Description_Objects;
 using UnityEngine;
 
-namespace GameViewDir
+namespace Elements
 {
+    [Serializable]
     public class ElementView : MonoBehaviour
     {
         public ElementDescr Description;
