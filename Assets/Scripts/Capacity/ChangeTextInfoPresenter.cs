@@ -1,24 +1,24 @@
-﻿namespace Elements
+﻿namespace Capacity
 {
     public class ChangeTextInfoPresenter : IPresenter
     {
-        private readonly Element _elementModel;
+        private readonly Capacity _capacityModel;
         private readonly ElementView _elementView;
 
-        public ChangeTextInfoPresenter(Element elementModel, ElementView elementView)
+        public ChangeTextInfoPresenter(Capacity capacityModel, ElementView elementView)
         {
-            _elementModel = elementModel;
+            _capacityModel = capacityModel;
             _elementView = elementView;
         }
 
         public void Subscribe()
         {
-            _elementModel.ChangedTextInfo += OnChangeTextInfo;
+            _capacityModel.ChangedTextInfo += OnChangeTextInfo;
         }
 
         public void UnSubscribe()
         {
-            _elementModel.ChangedTextInfo += OnChangeTextInfo;
+            _capacityModel.ChangedTextInfo += OnChangeTextInfo;
         }
 
         private void OnChangeTextInfo(string newText)

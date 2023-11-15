@@ -2,7 +2,7 @@
 using GameViewDir;
 using UnityEngine;
 
-namespace Elements
+namespace Capacity
 {
     public class CheckingElementHoverPresenter : IPresenter
     {

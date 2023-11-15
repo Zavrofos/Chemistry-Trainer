@@ -1,29 +1,26 @@
-﻿using GameModelDir;
-using GameViewDir;
-
-namespace Elements
+﻿namespace Capacity
 {
     public class OpenCloseInfoWindowPresenter : IPresenter
     {
-        private readonly Element _elementModel;
+        private readonly Capacity _capacityModel;
         private readonly ElementView _elementView;
 
-        public OpenCloseInfoWindowPresenter(Element elementModel, ElementView elementView)
+        public OpenCloseInfoWindowPresenter(Capacity capacityModel, ElementView elementView)
         {
-            _elementModel = elementModel;
+            _capacityModel = capacityModel;
             _elementView = elementView;
         }
         
         public void Subscribe()
         {
-            _elementModel.OpenedInfoWindow += OnOpenInfoWindow;
-            _elementModel.CloseInfoWindow += OnCloseInfoWindow;
+            _capacityModel.OpenedInfoWindow += OnOpenInfoWindow;
+            _capacityModel.CloseInfoWindow += OnCloseInfoWindow;
         }
 
         public void UnSubscribe()
         {
-            _elementModel.OpenedInfoWindow -= OnOpenInfoWindow;
-            _elementModel.CloseInfoWindow -= OnCloseInfoWindow;
+            _capacityModel.OpenedInfoWindow -= OnOpenInfoWindow;
+            _capacityModel.CloseInfoWindow -= OnCloseInfoWindow;
         }
 
         private void OnOpenInfoWindow()

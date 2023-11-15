@@ -3,7 +3,7 @@ using Description_Objects;
 using TMPro;
 using UnityEngine;
 
-namespace Elements
+namespace Capacity
 {
     [Serializable]
     public class ElementView : MonoBehaviour
