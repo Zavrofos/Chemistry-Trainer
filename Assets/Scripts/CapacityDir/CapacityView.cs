@@ -2,9 +2,8 @@
 using Description_Objects;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Capacity
+namespace CapacityDir
 {
     [Serializable]
     public class CapacityView : MonoBehaviour

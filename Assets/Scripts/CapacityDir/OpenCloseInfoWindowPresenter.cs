@@ -1,11 +1,11 @@
-﻿namespace Capacity
+﻿namespace CapacityDir
 {
     public class OpenCloseInfoWindowPresenter : IPresenter
     {
-        private readonly Capacity _capacityModel;
+        private readonly CapacityDir.Capacity _capacityModel;
         private readonly CapacityView _capacityView;
 
-        public OpenCloseInfoWindowPresenter(Capacity capacityModel, CapacityView capacityView)
+        public OpenCloseInfoWindowPresenter(CapacityDir.Capacity capacityModel, CapacityView capacityView)
         {
             _capacityModel = capacityModel;
             _capacityView = capacityView;

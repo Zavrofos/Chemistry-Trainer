@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Capacity;
+using CapacityDir;
 using Effects;
 using GameViewDir;
 
@@ -13,13 +12,13 @@ namespace GameModelDir
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
-        private Dictionary<Capacity.Capacity, List<IPresenter>> _elementsPresenters;
+        private Dictionary<Capacity, List<IPresenter>> _elementsPresenters;
 
         public StartGameInitializePresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
-            _elementsPresenters = new Dictionary<Capacity.Capacity, List<IPresenter>>();
+            _elementsPresenters = new Dictionary<Capacity, List<IPresenter>>();
         }
         
         public void Subscribe()
@@ -47,7 +46,10 @@ namespace GameModelDir
 
             foreach (var elementDescr in elementsDescription)
             {
-                Capacity.Capacity newCapacity = new Capacity.Capacity(elementDescr.InitialElement.Name, elementDescr.InitialElement.Formula, elementDescr.InitialElement.EnvironmentType);
+                Capacity newCapacity = new Capacity(elementDescr.InitialElement.Name, 
+                    elementDescr.InitialElement.Formula, 
+                    elementDescr.InitialElement.EnvironmentType,
+                    elementDescr.transform.position);
 
                 List<IPresenter> Presenters = new()
                 {

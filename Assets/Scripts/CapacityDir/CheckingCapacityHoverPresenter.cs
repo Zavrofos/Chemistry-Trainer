@@ -2,7 +2,7 @@
 using GameViewDir;
 using UnityEngine;
 
-namespace Capacity
+namespace CapacityDir
 {
     public class CheckingCapacityHoverPresenter : IPresenter
     {
