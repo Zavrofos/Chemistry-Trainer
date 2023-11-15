@@ -11,4 +11,9 @@ public class GameModel
     {
         
     }
+
+    public void Initialize()
+    {
+        
+    }
 }
