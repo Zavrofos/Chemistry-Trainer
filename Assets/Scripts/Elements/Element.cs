@@ -1,4 +1,6 @@
-﻿public class Element
+﻿using Description_Scripts;
+
+public class Element
 {
     public string Name;
     public string Formula;
