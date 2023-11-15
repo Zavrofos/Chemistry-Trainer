@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: Description
       value: 
       objectReference: {fileID: 11400000, guid: 8bb890f9a8f7c5644b1b495df633dbbc, type: 2}
+    - target: {fileID: 1609546863125138692, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}
+      propertyPath: InitialElement
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bb890f9a8f7c5644b1b495df633dbbc, type: 2}
     - target: {fileID: 6370072775643554885, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}
       propertyPath: m_Name
       value: Oxygen
@@ -1067,6 +1071,10 @@ PrefabInstance:
       propertyPath: Description
       value: 
       objectReference: {fileID: 11400000, guid: 933943702ad7a7742a2bd85026e35015, type: 2}
+    - target: {fileID: 1609546863125138692, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}
+      propertyPath: InitialElement
+      value: 
+      objectReference: {fileID: 11400000, guid: 933943702ad7a7742a2bd85026e35015, type: 2}
     - target: {fileID: 6370072775643554885, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}
       propertyPath: m_Name
       value: Hydrogen
@@ -1142,6 +1150,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1609546863125138692, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}
       propertyPath: Description
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b3be722753d94b4fa6ea17d3e8c9df8, type: 2}
+    - target: {fileID: 1609546863125138692, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}
+      propertyPath: InitialElement
       value: 
       objectReference: {fileID: 11400000, guid: 7b3be722753d94b4fa6ea17d3e8c9df8, type: 2}
     - target: {fileID: 6370072775643554885, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}

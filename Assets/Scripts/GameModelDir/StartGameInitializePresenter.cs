@@ -47,7 +47,7 @@ namespace GameModelDir
 
             foreach (var elementDescr in elementsDescription)
             {
-                Capacity.Capacity newCapacity = new Capacity.Capacity(elementDescr.Description.Name, elementDescr.Description.Formula, elementDescr.Description.EnvironmentType);
+                Capacity.Capacity newCapacity = new Capacity.Capacity(elementDescr.InitialElement.Name, elementDescr.InitialElement.Formula, elementDescr.InitialElement.EnvironmentType);
 
                 List<IPresenter> Presenters = new()
                 {
@@ -57,8 +57,8 @@ namespace GameModelDir
                 
                 _elementsPresenters.Add(newCapacity, Presenters);
                 
-                _gameModel.ElementsMap.Add(elementDescr.Description.Name, newCapacity);
-                _gameView.CurrentElements.Add(elementDescr.Description.Name, elementDescr);
+                _gameModel.ElementsMap.Add(elementDescr.InitialElement.Name, newCapacity);
+                _gameView.CurrentElements.Add(elementDescr.InitialElement.Name, elementDescr);
             }
 
             foreach (var reactionDesc in reactionDescription)

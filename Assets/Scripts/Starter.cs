@@ -22,7 +22,7 @@ public class Starter : MonoBehaviour
         Presenters = new List<IPresenter>()
         {
             new StartGameInitializePresenter(GameModel, GameView),
-            new CheckingElementHoverPresenter(GameModel, GameView)
+            new CheckingCapacityHoverPresenter(GameModel, GameView)
         };
         Updaters = new List<IUpdater>()
         {

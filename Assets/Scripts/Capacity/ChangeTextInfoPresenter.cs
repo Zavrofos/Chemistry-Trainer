@@ -3,12 +3,12 @@
     public class ChangeTextInfoPresenter : IPresenter
     {
         private readonly Capacity _capacityModel;
-        private readonly ElementView _elementView;
+        private readonly CapacityView _capacityView;
 
-        public ChangeTextInfoPresenter(Capacity capacityModel, ElementView elementView)
+        public ChangeTextInfoPresenter(Capacity capacityModel, CapacityView capacityView)
         {
             _capacityModel = capacityModel;
-            _elementView = elementView;
+            _capacityView = capacityView;
         }
 
         public void Subscribe()
@@ -23,7 +23,7 @@
 
         private void OnChangeTextInfo(string newText)
         {
-            _elementView.InfoText.text = newText;
+            _capacityView.InfoText.text = newText;
         }
     }
 }

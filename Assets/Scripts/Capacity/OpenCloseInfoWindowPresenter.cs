@@ -3,12 +3,12 @@
     public class OpenCloseInfoWindowPresenter : IPresenter
     {
         private readonly Capacity _capacityModel;
-        private readonly ElementView _elementView;
+        private readonly CapacityView _capacityView;
 
-        public OpenCloseInfoWindowPresenter(Capacity capacityModel, ElementView elementView)
+        public OpenCloseInfoWindowPresenter(Capacity capacityModel, CapacityView capacityView)
         {
             _capacityModel = capacityModel;
-            _elementView = elementView;
+            _capacityView = capacityView;
         }
         
         public void Subscribe()
@@ -25,12 +25,12 @@
 
         private void OnOpenInfoWindow()
         {
-            _elementView.InfoWindow.SetActive(true);
+            _capacityView.InfoWindow.SetActive(true);
         }
         
         private void OnCloseInfoWindow()
         {
-            _elementView.InfoWindow.SetActive(false);
+            _capacityView.InfoWindow.SetActive(false);
         }
     }
 }
