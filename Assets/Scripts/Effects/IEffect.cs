@@ -1,4 +1,6 @@
-﻿namespace Effects
+﻿using GameModelDir;
+
+namespace Effects
 {
     public interface IEffect
     {

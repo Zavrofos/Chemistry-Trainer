@@ -1,10 +1,17 @@
-﻿using UnityEngine;
+﻿using GameModelDir;
+using UnityEngine;
 
 namespace Effects
 {
     public class ChangeColorEffect : IEffect
     {
-        public Color Color;
+        public readonly Color Color;
+
+        public ChangeColorEffect(Color color)
+        {
+            Color = color;
+        }
+        
         public void SetEffect(GameModel model)
         {
             
