@@ -484,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: {fileID: 0}
   InfoWindow: {fileID: 7220352960681428089}
+  InfoText: {fileID: 7654868057848490483}
 --- !u!136 &4742529593960094310
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -520,12 +521,12 @@ GameObject:
   - component: {fileID: 4354471482958818199}
   - component: {fileID: 4600400339643657267}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3549338414597860360
 Transform:
   m_ObjectHideFlags: 0
