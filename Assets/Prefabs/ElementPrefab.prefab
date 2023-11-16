@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3660590069498358444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ElementPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1813841679430451459}
   - component: {fileID: 6416206848020501385}
   - component: {fileID: 4944570301727112692}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2086956795167392795}
   - component: {fileID: 4147141368138154570}
   - component: {fileID: 4542622658828145243}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 5423041553405345112}
   - component: {fileID: 5172405618627930874}
   - component: {fileID: 3714557231086009227}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 7231175888024294745}
   - component: {fileID: 8859908715138425170}
   - component: {fileID: 7654868057848490483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 2383947781376076893}
   - component: {fileID: 1556814168649558227}
   - component: {fileID: 7342631816834559705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 1370638773678491946}
   - component: {fileID: 1609546863125138692}
   - component: {fileID: 4742529593960094310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ElementPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46474fb3c6b04fbf8a532f9df96aa0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Description: {fileID: 0}
+  InitialElement: {fileID: 0}
   InfoWindow: {fileID: 7220352960681428089}
   InfoText: {fileID: 7654868057848490483}
 --- !u!136 &4742529593960094310
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 7480420378436907711}
   - component: {fileID: 4354471482958818199}
   - component: {fileID: 4600400339643657267}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
