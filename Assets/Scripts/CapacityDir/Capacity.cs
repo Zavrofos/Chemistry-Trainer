@@ -21,6 +21,7 @@ namespace CapacityDir
         public event Action ChangedTextInfo;
         public event Action<List<Element>> AddedElement;
         public event Action EmptiedCapacity;
+        public event Action ReturnedToInitialPosition;
 
         public Capacity(int id, List<Element> currentElement, Vector3 initialPositin, Quaternion initialRotation,
             LayerMask initialLayer, Vector3 rotationTilt, Vector3 pointPositionTilt)
@@ -59,6 +60,11 @@ namespace CapacityDir
         public void EmptyCapacity()
         {
             EmptiedCapacity?.Invoke();
+        }
+
+        public void ReturnToInitialPosition()
+        {
+            ReturnedToInitialPosition?.Invoke();
         }
     }
 }
