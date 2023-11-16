@@ -5,12 +5,12 @@ using GameViewDir;
 
 namespace Cursor
 {
-    public class MixElementsPresenter : IPresenter
+    public class ClickMixElementsPresenter : IPresenter
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
 
-        public MixElementsPresenter(GameModel gameModel, GameView gameView)
+        public ClickMixElementsPresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;

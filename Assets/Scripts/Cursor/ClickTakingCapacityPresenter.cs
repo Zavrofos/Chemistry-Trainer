@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace Cursor
 {
-    public class TakingCapacityPresenter : IPresenter
+    public class ClickTakingCapacityPresenter : IPresenter
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
 
-        public TakingCapacityPresenter(GameModel gameModel, GameView gameView)
+        public ClickTakingCapacityPresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
@@ -29,7 +29,7 @@ namespace Cursor
 
         private void OnChooseCapacity()
         {
-            if (_gameModel.CursorModel.CurrentState == CursorState.CapacitySelected) return;
+            if (_gameModel.CursorModel.CurrentState != CursorState.Idle) return;
             
             if (_gameModel.CursorModel.TargetAtGunPoint.TryGetComponent(out CapacityView capacity))
             {
