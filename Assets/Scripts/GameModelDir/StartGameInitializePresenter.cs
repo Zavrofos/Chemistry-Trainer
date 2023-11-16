@@ -5,6 +5,7 @@ using System.Text;
 using CapacityDir;
 using Effects;
 using GameViewDir;
+using UnityEngine;
 
 namespace GameModelDir
 {
@@ -50,6 +51,8 @@ namespace GameModelDir
                     elementDescr.InitialElement.Formula, 
                     elementDescr.InitialElement.EnvironmentType,
                     elementDescr.transform.position,
+                    elementDescr.transform.rotation,
+                    new Vector3(-130, 0, 0),
                     elementDescr.gameObject.layer);
 
                 List<IPresenter> Presenters = new()
