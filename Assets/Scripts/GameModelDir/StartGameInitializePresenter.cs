@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CapacityDir;
+using Cursor;
 using Effects;
 using GameViewDir;
 using UnityEngine;
@@ -79,7 +80,9 @@ namespace GameModelDir
                 List<IPresenter> presenters = new()
                 {
                     new OpenCloseInfoWindowPresenter(newCapacity, capacityView),
-                    new ChangeTextInfoPresenter(newCapacity, capacityView)
+                    new DisplayTextInfoPresenter(newCapacity, capacityView), 
+                    new AddingElementsToCapacityPresenter(newCapacity, capacityView, _gameModel),
+                    new EmptyCapacityPresenter(newCapacity, capacityView)
                 };
                 
                 _elementsPresenters.Add(newCapacity, presenters);
@@ -101,19 +104,7 @@ namespace GameModelDir
         {
             foreach (var value in _gameModel.CapacityesMap.Values)
             {
-                string newText = String.Empty;
-                for (int i = 0; i < value.CurrentElements.Count; i++)
-                {
-                    if (i == value.CurrentElements.Count - 1)
-                    {
-                        newText += value.CurrentElements[i].Formula;
-                    }
-                    else
-                    {
-                        newText += value.CurrentElements[i].Formula + " + ";
-                    }
-                }
-                value.ChangeText(newText);
+                value.DisplayInfoText();
             }
         }
 

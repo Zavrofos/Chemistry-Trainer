@@ -18,7 +18,9 @@ namespace CapacityDir
         
         public event Action OpenedInfoWindow;
         public event Action CloseInfoWindow;
-        public event Action<string> ChangedTextInfo;
+        public event Action ChangedTextInfo;
+        public event Action<List<Element>> AddedElement;
+        public event Action EmptiedCapacity;
 
         public Capacity(int id, List<Element> currentElement, Vector3 initialPositin, Quaternion initialRotation,
             LayerMask initialLayer, Vector3 rotationTilt, Vector3 pointPositionTilt)
@@ -44,9 +46,19 @@ namespace CapacityDir
             CloseInfoWindow?.Invoke();
         }
 
-        public void ChangeText(string newText)
+        public void DisplayInfoText()
         {
-            ChangedTextInfo?.Invoke(newText);
+            ChangedTextInfo?.Invoke();
+        }
+
+        public void AddElement(List<Element> newElement)
+        {
+            AddedElement?.Invoke(newElement);
+        }
+
+        public void EmptyCapacity()
+        {
+            EmptiedCapacity?.Invoke();
         }
     }
 }
