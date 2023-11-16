@@ -17,12 +17,12 @@ namespace CapacityDir
         
         public void Subscribe()
         {
-            _gameModel.CursorModel.ChangedTarget += OnCheckElementTarget;
+            _gameModel.CursorModel.AimedAtTheTarget += OnCheckElementTarget;
         }
 
         public void UnSubscribe()
         {
-            _gameModel.CursorModel.ChangedTarget += OnCheckElementTarget;
+            _gameModel.CursorModel.AimedAtTheTarget += OnCheckElementTarget;
         }
 
         private void OnCheckElementTarget(GameObject target)

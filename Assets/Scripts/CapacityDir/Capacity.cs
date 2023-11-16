@@ -10,18 +10,20 @@ namespace CapacityDir
         public string Formula;
         public EnvironmentType EnvironmentType;
         public Vector3 InitialPositin;
+        public LayerMask InitialLayer;
         public bool IsOpenInformationWindow;
 
         public event Action OpenedInfoWindow;
         public event Action CloseInfoWindow;
         public event Action<string> ChangedTextInfo;
 
-        public Capacity(string name, string formula, EnvironmentType environmentType, Vector3 initialPosition)
+        public Capacity(string name, string formula, EnvironmentType environmentType, Vector3 initialPosition, LayerMask initialLayer)
         {
             Name = name;
             Formula = formula;
             EnvironmentType = environmentType;
             InitialPositin = initialPosition;
+            InitialLayer = initialLayer;
         }
 
         public void OpenInformationWindow()
