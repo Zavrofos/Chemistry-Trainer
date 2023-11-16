@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CapacityDir
 {
-    public class CapacityView : MonoBehaviour
+    public class ConteinerView : MonoBehaviour
     {
         [HideInInspector] public int Id;
         public List<ElementDescr> InitialElements;

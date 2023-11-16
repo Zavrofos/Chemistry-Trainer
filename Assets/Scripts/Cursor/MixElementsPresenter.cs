@@ -27,12 +27,12 @@ namespace Cursor
 
         private void OnMixElements()
         {
-            CapacityView capacityViewTarget = _gameModel.CursorModel.TargetAtGunPoint.GetComponent<CapacityView>();
-            CapacityView capacityViewSelected = _gameModel.CursorModel.SelectedTarget.GetComponent<CapacityView>();
+            ConteinerView conteinerViewTarget = _gameModel.CursorModel.TargetAtGunPoint.GetComponent<ConteinerView>();
+            ConteinerView conteinerViewSelected = _gameModel.CursorModel.SelectedTarget.GetComponent<ConteinerView>();
             
-            _gameModel.CapacityesMap[capacityViewTarget.Id].AddElement(_gameModel.CapacityesMap[capacityViewSelected.Id].CurrentElements);
-            _gameModel.CapacityesMap[capacityViewSelected.Id].EmptyCapacity();
-            _gameModel.CapacityesMap[capacityViewSelected.Id].ReturnToInitialPosition();
+            _gameModel.CapacityesMap[conteinerViewTarget.Id].AddElement(_gameModel.CapacityesMap[conteinerViewSelected.Id].CurrentElements);
+            _gameModel.CapacityesMap[conteinerViewSelected.Id].EmptyCapacity();
+            _gameModel.CapacityesMap[conteinerViewSelected.Id].ReturnToInitialPosition();
         }
     }
 }

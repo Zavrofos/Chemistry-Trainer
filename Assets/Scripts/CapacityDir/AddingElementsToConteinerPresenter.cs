@@ -8,13 +8,13 @@ using UnityEngine;
 
 namespace CapacityDir
 {
-    public class AddingElementsToCapacityPresenter : IPresenter
+    public class AddingElementsToConteinerPresenter : IPresenter
     {
-        private readonly Capacity _model;
-        private readonly CapacityView _view;
+        private readonly Conteiner _model;
+        private readonly ConteinerView _view;
         private readonly GameModel _gameModel;
 
-        public AddingElementsToCapacityPresenter(Capacity model, CapacityView view, GameModel gameModel)
+        public AddingElementsToConteinerPresenter(Conteiner model, ConteinerView view, GameModel gameModel)
         {
             _model = model;
             _view = view;

@@ -11,7 +11,6 @@ namespace Cursor
         public CursorState CurrentState = CursorState.Idle;
         public event Action<GameObject> AimedAtTheTarget;
         public event Action ClickedMouse0;
-
         public event Action TakedCapacity;
         public event Action MixedElements;
 

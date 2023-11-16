@@ -7,7 +7,7 @@ public class Reaction
     public string[] Elements;
     public string[] ResultElements;
     public IEffect[] Effects;
-    public event Action<CapacityView> StartedReaction; 
+    public event Action<ConteinerView> StartedReaction; 
 
     public Reaction(string[] elements, string[] resultElements, IEffect[] effects)
     {
@@ -16,8 +16,8 @@ public class Reaction
         Effects = effects;
     }
 
-    public void StartReaction(CapacityView capacity)
+    public void StartReaction(ConteinerView conteiner)
     {
-        StartedReaction?.Invoke(capacity);
+        StartedReaction?.Invoke(conteiner);
     }
 }

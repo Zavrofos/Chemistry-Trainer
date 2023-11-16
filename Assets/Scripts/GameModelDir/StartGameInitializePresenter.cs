@@ -14,14 +14,14 @@ namespace GameModelDir
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
-        private Dictionary<Capacity, List<IPresenter>> _elementsPresenters;
+        private Dictionary<Conteiner, List<IPresenter>> _elementsPresenters;
         private int numberId = 0;
 
         public StartGameInitializePresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
-            _elementsPresenters = new Dictionary<Capacity, List<IPresenter>>();
+            _elementsPresenters = new Dictionary<Conteiner, List<IPresenter>>();
         }
         
         public void Subscribe()
@@ -70,23 +70,23 @@ namespace GameModelDir
                     elements.Add(newElement);
                 }
 
-                Capacity newCapacity = new Capacity(numberId, elements, capacityView.transform.position,
+                Conteiner newConteiner = new Conteiner(numberId, elements, capacityView.transform.position,
                     capacityView.transform.rotation, capacityView.gameObject.layer, new Vector3(-130, 0, 0),
                     capacityView.PointPositionTilt.position);
-                _gameModel.CapacityesMap.Add(numberId, newCapacity);
+                _gameModel.CapacityesMap.Add(numberId, newConteiner);
                 _gameView.CurrentCapacityes.Add(numberId, capacityView);
                 numberId++;
 
                 List<IPresenter> presenters = new()
                 {
-                    new OpenCloseInfoWindowPresenter(newCapacity, capacityView),
-                    new DisplayTextInfoPresenter(newCapacity, capacityView), 
-                    new AddingElementsToCapacityPresenter(newCapacity, capacityView, _gameModel),
-                    new EmptyCapacityPresenter(newCapacity, capacityView),
-                    new ReturnToInitialPositionCapacityPresenter(newCapacity, capacityView, _gameModel)
+                    new OpenCloseInfoWindowPresenter(newConteiner, capacityView),
+                    new DisplayTextInfoPresenter(newConteiner, capacityView), 
+                    new AddingElementsToConteinerPresenter(newConteiner, capacityView, _gameModel),
+                    new EmptyConteinerPresenter(newConteiner, capacityView),
+                    new ReturnToInitialPositionConteinerPresenter(newConteiner, capacityView, _gameModel)
                 };
                 
-                _elementsPresenters.Add(newCapacity, presenters);
+                _elementsPresenters.Add(newConteiner, presenters);
                 
                 foreach (var presenter in presenters)
                 {

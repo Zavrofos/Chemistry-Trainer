@@ -3,13 +3,13 @@ using GameModelDir;
 
 namespace CapacityDir
 {
-    public class ReturnToInitialPositionCapacityPresenter : IPresenter
+    public class ReturnToInitialPositionConteinerPresenter : IPresenter
     {
-        private readonly Capacity _model;
-        private readonly CapacityView _view;
+        private readonly Conteiner _model;
+        private readonly ConteinerView _view;
         private readonly GameModel _gameModel;
 
-        public ReturnToInitialPositionCapacityPresenter(Capacity model, CapacityView view, GameModel gameModel)
+        public ReturnToInitialPositionConteinerPresenter(Conteiner model, ConteinerView view, GameModel gameModel)
         {
             _model = model;
             _view = view;

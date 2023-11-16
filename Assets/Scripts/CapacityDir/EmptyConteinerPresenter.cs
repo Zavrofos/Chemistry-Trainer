@@ -2,12 +2,12 @@
 
 namespace CapacityDir
 {
-    public class EmptyCapacityPresenter : IPresenter
+    public class EmptyConteinerPresenter : IPresenter
     {
-        private readonly Capacity _model;
-        private readonly CapacityView _view;
+        private readonly Conteiner _model;
+        private readonly ConteinerView _view;
 
-        public EmptyCapacityPresenter(Capacity model, CapacityView view)
+        public EmptyConteinerPresenter(Conteiner model, ConteinerView view)
         {
             _model = model;
             _view = view;

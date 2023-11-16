@@ -4,46 +4,46 @@ namespace CapacityDir
 {
     public class DisplayTextInfoPresenter : IPresenter
     {
-        private readonly Capacity _capacityModel;
-        private readonly CapacityView _capacityView;
+        private readonly Conteiner _conteinerModel;
+        private readonly ConteinerView _conteinerView;
 
-        public DisplayTextInfoPresenter(CapacityDir.Capacity capacityModel, CapacityView capacityView)
+        public DisplayTextInfoPresenter(CapacityDir.Conteiner conteinerModel, ConteinerView conteinerView)
         {
-            _capacityModel = capacityModel;
-            _capacityView = capacityView;
+            _conteinerModel = conteinerModel;
+            _conteinerView = conteinerView;
         }
 
         public void Subscribe()
         {
-            _capacityModel.ChangedTextInfo += OnChangeTextInfo;
+            _conteinerModel.ChangedTextInfo += OnChangeTextInfo;
         }
 
         public void UnSubscribe()
         {
-            _capacityModel.ChangedTextInfo += OnChangeTextInfo;
+            _conteinerModel.ChangedTextInfo += OnChangeTextInfo;
         }
 
         private void OnChangeTextInfo()
         {
             string newText = String.Empty;
-            if (_capacityModel.CurrentElements.Count == 0)
+            if (_conteinerModel.CurrentElements.Count == 0)
             {
                 newText = "Empty";
             }
 
-            for (int i = 0; i < _capacityModel.CurrentElements.Count; i++)
+            for (int i = 0; i < _conteinerModel.CurrentElements.Count; i++)
             {
-                if (i == _capacityModel.CurrentElements.Count - 1)
+                if (i == _conteinerModel.CurrentElements.Count - 1)
                 {
-                    newText += _capacityModel.CurrentElements[i].Formula;
+                    newText += _conteinerModel.CurrentElements[i].Formula;
                 }
                 else
                 {
-                    newText += _capacityModel.CurrentElements[i].Formula + " + ";
+                    newText += _conteinerModel.CurrentElements[i].Formula + " + ";
                 }
             }
 
-            _capacityView.InfoText.text = newText;
+            _conteinerView.InfoText.text = newText;
         }
     }
 }

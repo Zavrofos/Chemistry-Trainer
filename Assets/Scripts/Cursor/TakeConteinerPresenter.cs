@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Cursor
 {
-    public class TakeCapacityPresenter : IPresenter
+    public class TakeConteinerPresenter : IPresenter
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
 
-        public TakeCapacityPresenter(GameModel gameModel, GameView gameView)
+        public TakeConteinerPresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
@@ -28,7 +28,7 @@ namespace Cursor
 
         private void OnTakeCapacity()
         {
-            if (_gameModel.CursorModel.TargetAtGunPoint.TryGetComponent(out CapacityView capacity))
+            if (_gameModel.CursorModel.TargetAtGunPoint.TryGetComponent(out ConteinerView capacity))
             {
                 _gameModel.CapacityesMap[capacity.Id].CloseInformationWindow();
                 _gameModel.CursorModel.CurrentState = CursorState.CapacitySelected;

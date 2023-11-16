@@ -30,10 +30,10 @@ namespace Cursor
         {
             CursorModel cursorModel = _gameModel.CursorModel;
             if (cursorModel.CurrentState != CursorState.CapacityTilt) return;
-            CapacityView selectedCapacity = cursorModel.SelectedTarget.GetComponent<CapacityView>();
-            if (!cursorModel.TargetAtGunPoint.GetComponent<CapacityView>())
+            ConteinerView selectedConteiner = cursorModel.SelectedTarget.GetComponent<ConteinerView>();
+            if (!cursorModel.TargetAtGunPoint.GetComponent<ConteinerView>())
             {
-                selectedCapacity.transform.rotation = _gameModel.CapacityesMap[selectedCapacity.Id].InitialRotation;
+                selectedConteiner.transform.rotation = _gameModel.CapacityesMap[selectedConteiner.Id].InitialRotation;
                 cursorModel.CurrentState = CursorState.CapacitySelected;
             }
         }

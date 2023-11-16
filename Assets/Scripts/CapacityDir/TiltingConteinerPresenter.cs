@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace CapacityDir
 {
-    public class TiltingCapacityPresenter : IPresenter
+    public class TiltingConteinerPresenter : IPresenter
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
 
-        public TiltingCapacityPresenter(GameModel gameModel, GameView gameView)
+        public TiltingConteinerPresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
@@ -31,11 +31,11 @@ namespace CapacityDir
         {
             CursorModel cursorModel = _gameModel.CursorModel;
             if (cursorModel.CurrentState != CursorState.CapacitySelected) return;
-            CapacityView selectedCapacity = cursorModel.SelectedTarget.GetComponent<CapacityView>();
-            if (cursorModel.TargetAtGunPoint.TryGetComponent(out CapacityView capacity))
+            ConteinerView selectedConteiner = cursorModel.SelectedTarget.GetComponent<ConteinerView>();
+            if (cursorModel.TargetAtGunPoint.TryGetComponent(out ConteinerView capacity))
             {
-                selectedCapacity.transform.rotation = Quaternion.Euler(_gameModel.CapacityesMap[capacity.Id].RotationTilt);
-                selectedCapacity.transform.position =
+                selectedConteiner.transform.rotation = Quaternion.Euler(_gameModel.CapacityesMap[capacity.Id].RotationTilt);
+                selectedConteiner.transform.position =
                     _gameModel.CapacityesMap[capacity.Id].PointPositionTilt;
                 cursorModel.CurrentState = CursorState.CapacityTilt;
             }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Cursor
 {
-    public class MoveSelectedCapacityToMouseUpdater : IUpdater
+    public class MoveSelectedConteinerToMouseUpdater : IUpdater
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
 
-        public MoveSelectedCapacityToMouseUpdater(GameModel gameModel, GameView gameView)
+        public MoveSelectedConteinerToMouseUpdater(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;

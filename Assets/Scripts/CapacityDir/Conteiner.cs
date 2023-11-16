@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CapacityDir
 {
-    public class Capacity
+    public class Conteiner
     {
         public List<Element> CurrentElements;
         public readonly int Id;
@@ -23,7 +23,7 @@ namespace CapacityDir
         public event Action EmptiedCapacity;
         public event Action ReturnedToInitialPosition;
 
-        public Capacity(int id, List<Element> currentElement, Vector3 initialPositin, Quaternion initialRotation,
+        public Conteiner(int id, List<Element> currentElement, Vector3 initialPositin, Quaternion initialRotation,
             LayerMask initialLayer, Vector3 rotationTilt, Vector3 pointPositionTilt)
         {
             Id = id;

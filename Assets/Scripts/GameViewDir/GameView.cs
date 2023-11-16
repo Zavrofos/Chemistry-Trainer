@@ -10,8 +10,8 @@ namespace GameViewDir
     {
         public List<ReactionDesc> ReactionsInfo;
         public List<ElementDescr> ElementsInfo;
-        public List<CapacityView> InitialCapacityes;
+        public List<ConteinerView> InitialCapacityes;
         
-        public Dictionary<int, CapacityView> CurrentCapacityes = new();
+        public Dictionary<int, ConteinerView> CurrentCapacityes = new();
     }
 }

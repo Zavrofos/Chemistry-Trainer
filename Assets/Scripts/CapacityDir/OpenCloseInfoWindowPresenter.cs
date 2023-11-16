@@ -2,35 +2,35 @@
 {
     public class OpenCloseInfoWindowPresenter : IPresenter
     {
-        private readonly Capacity _capacityModel;
-        private readonly CapacityView _capacityView;
+        private readonly Conteiner _conteinerModel;
+        private readonly ConteinerView _conteinerView;
 
-        public OpenCloseInfoWindowPresenter(Capacity capacityModel, CapacityView capacityView)
+        public OpenCloseInfoWindowPresenter(Conteiner conteinerModel, ConteinerView conteinerView)
         {
-            _capacityModel = capacityModel;
-            _capacityView = capacityView;
+            _conteinerModel = conteinerModel;
+            _conteinerView = conteinerView;
         }
         
         public void Subscribe()
         {
-            _capacityModel.OpenedInfoWindow += OnOpenInfoWindow;
-            _capacityModel.CloseInfoWindow += OnCloseInfoWindow;
+            _conteinerModel.OpenedInfoWindow += OnOpenInfoWindow;
+            _conteinerModel.CloseInfoWindow += OnCloseInfoWindow;
         }
 
         public void UnSubscribe()
         {
-            _capacityModel.OpenedInfoWindow -= OnOpenInfoWindow;
-            _capacityModel.CloseInfoWindow -= OnCloseInfoWindow;
+            _conteinerModel.OpenedInfoWindow -= OnOpenInfoWindow;
+            _conteinerModel.CloseInfoWindow -= OnCloseInfoWindow;
         }
 
         private void OnOpenInfoWindow()
         {
-            _capacityView.InfoWindow.SetActive(true);
+            _conteinerView.InfoWindow.SetActive(true);
         }
         
         private void OnCloseInfoWindow()
         {
-            _capacityView.InfoWindow.SetActive(false);
+            _conteinerView.InfoWindow.SetActive(false);
         }
     }
 }

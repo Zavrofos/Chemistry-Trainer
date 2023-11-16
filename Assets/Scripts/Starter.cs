@@ -18,18 +18,18 @@ public class Starter : MonoBehaviour
         Presenters = new List<IPresenter>()
         {
             new StartGameInitializePresenter(GameModel, GameView),
-            new CheckingCapacityHoverPresenter(GameModel, GameView),
-            new TiltingCapacityPresenter(GameModel, GameView),
+            new CheckingConteinerHoverPresenter(GameModel, GameView),
+            new TiltingConteinerPresenter(GameModel, GameView),
             new CancelTiltPresenter(GameModel, GameView),
             new ClickPresenter(GameModel, GameView),
-            new TakeCapacityPresenter(GameModel, GameView),
+            new TakeConteinerPresenter(GameModel, GameView),
             new MixElementsPresenter(GameModel, GameView)
         };
         Updaters = new List<IUpdater>()
         {
             new TargetingUpdater(GameModel, GameView),
             new ClickMouse0Updater(GameModel, GameView),
-            new MoveSelectedCapacityToMouseUpdater(GameModel, GameView),
+            new MoveSelectedConteinerToMouseUpdater(GameModel, GameView),
             new CursorPositionUpdater(GameModel, GameView)
         };
     }

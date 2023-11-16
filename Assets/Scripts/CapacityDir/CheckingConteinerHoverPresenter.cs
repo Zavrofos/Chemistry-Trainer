@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace CapacityDir
 {
-    public class CheckingCapacityHoverPresenter : IPresenter
+    public class CheckingConteinerHoverPresenter : IPresenter
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
 
-        public CheckingCapacityHoverPresenter(GameModel gameModel, GameView gameView)
+        public CheckingConteinerHoverPresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
