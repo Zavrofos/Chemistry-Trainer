@@ -46,9 +46,9 @@ namespace CapacityDir
                     newElements.Add(newElement);
                 }
                 _model.CurrentElements = newElements;
-                _model.DisplayInfoText();
                 _gameModel.ReactionsMap[key].StartReaction(_view);
             }
+            _model.DisplayInfoText();
         }
         
         private string CreateKey(List<Element> elements)

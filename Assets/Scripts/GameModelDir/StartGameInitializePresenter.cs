@@ -86,13 +86,10 @@ namespace GameModelDir
                 };
                 
                 _elementsPresenters.Add(newCapacity, presenters);
-
-                foreach (var presentersValue in _elementsPresenters.Values)
+                
+                foreach (var presenter in presenters)
                 {
-                    foreach (var presenter in presentersValue)
-                    {
-                        presenter.Subscribe();
-                    }
+                    presenter.Subscribe();
                 }
             }
             
