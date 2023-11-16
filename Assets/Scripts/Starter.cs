@@ -22,11 +22,15 @@ public class Starter : MonoBehaviour
         Presenters = new List<IPresenter>()
         {
             new StartGameInitializePresenter(GameModel, GameView),
-            new CheckingCapacityHoverPresenter(GameModel, GameView)
+            new CheckingCapacityHoverPresenter(GameModel, GameView),
+            new TakingCapacityPresenter(GameModel, GameView)
         };
         Updaters = new List<IUpdater>()
         {
-            new HoverUpdater(GameModel, GameView)
+            new TargetingUpdater(GameModel, GameView),
+            new ClickMouse0Updater(GameModel, GameView),
+            new MoveSelectedCapacityToMouseUpdater(GameModel, GameView),
+            new CursorPositionUpdater(GameModel, GameView)
         };
     }
 

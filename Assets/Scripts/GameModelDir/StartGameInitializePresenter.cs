@@ -49,7 +49,8 @@ namespace GameModelDir
                 Capacity newCapacity = new Capacity(elementDescr.InitialElement.Name, 
                     elementDescr.InitialElement.Formula, 
                     elementDescr.InitialElement.EnvironmentType,
-                    elementDescr.transform.position);
+                    elementDescr.transform.position,
+                    elementDescr.gameObject.layer);
 
                 List<IPresenter> Presenters = new()
                 {
