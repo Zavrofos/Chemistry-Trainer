@@ -27,15 +27,15 @@ namespace CapacityDir
 
         private void OnCheckElementTarget(GameObject target)
         {
-            foreach (var capacityView in _gameView.CurrentElements.Values)
+            foreach (var capacityView in _gameView.CurrentCapacityes.Values)
             {
                 if (capacityView.gameObject == target)
                 {
-                    _gameModel.ElementsMap[capacityView.InitialElement.Name].OpenInformationWindow();
+                    _gameModel.CapacityesMap[capacityView.Id].OpenInformationWindow();
                 }
-                else if (_gameModel.ElementsMap[capacityView.InitialElement.Name].IsOpenInformationWindow)
+                else if (_gameModel.CapacityesMap[capacityView.Id].IsOpenInformationWindow)
                 {
-                    _gameModel.ElementsMap[capacityView.InitialElement.Name].CloseInformationWindow();
+                    _gameModel.CapacityesMap[capacityView.Id].CloseInformationWindow();
                 }
             }
         }

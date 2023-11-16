@@ -1,14 +1,14 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Description_Objects;
 using TMPro;
 using UnityEngine;
 
 namespace CapacityDir
 {
-    [Serializable]
     public class CapacityView : MonoBehaviour
     {
-        public ElementDescr InitialElement;
+        [HideInInspector] public int Id;
+        public List<ElementDescr> InitialElements;
         public GameObject InfoWindow;
         public TMP_Text InfoText;
         public Transform PointPositionTilt;

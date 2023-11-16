@@ -24,7 +24,7 @@ public class Starter : MonoBehaviour
             new StartGameInitializePresenter(GameModel, GameView),
             new CheckingCapacityHoverPresenter(GameModel, GameView),
             new TakingCapacityPresenter(GameModel, GameView),
-            new TiltingCapacityPresenter(GameModel, GameView)
+            new TiltingCapacityPresenter(GameModel, GameView),
         };
         Updaters = new List<IUpdater>()
         {

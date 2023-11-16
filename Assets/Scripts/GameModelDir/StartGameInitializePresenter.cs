@@ -14,6 +14,7 @@ namespace GameModelDir
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
         private Dictionary<Capacity, List<IPresenter>> _elementsPresenters;
+        private int numberId = 0;
 
         public StartGameInitializePresenter(GameModel gameModel, GameView gameView)
         {
@@ -42,54 +43,77 @@ namespace GameModelDir
 
         private void OnInitializeStartGame()
         {
-            var elementsDescription = _gameView.Elements;
-            var reactionDescription = _gameView.Reactions;
+            var elementsDescription = _gameView.ElementsInfo;
+            var reactionDescription = _gameView.ReactionsInfo;
+            var capacityesInitial = _gameView.InitialCapacityes;
 
             foreach (var elementDescr in elementsDescription)
             {
-                Capacity newCapacity = new Capacity(elementDescr.InitialElement.Name, 
-                    elementDescr.InitialElement.Formula, 
-                    elementDescr.InitialElement.EnvironmentType,
-                    elementDescr.transform.position,
-                    elementDescr.transform.rotation,
-                    new Vector3(-130, 0, 0),
-                    elementDescr.gameObject.layer,
-                    elementDescr.PointPositionTilt.position);
-
-                List<IPresenter> Presenters = new()
-                {
-                    new OpenCloseInfoWindowPresenter(newCapacity, elementDescr),
-                    new ChangeTextInfoPresenter(newCapacity, elementDescr)
-                };
-                
-                _elementsPresenters.Add(newCapacity, Presenters);
-                
-                _gameModel.ElementsMap.Add(elementDescr.InitialElement.Name, newCapacity);
-                _gameView.CurrentElements.Add(elementDescr.InitialElement.Name, elementDescr);
+                _gameModel.ElementsInfoMap.Add(elementDescr.Name, elementDescr);
             }
 
             foreach (var reactionDesc in reactionDescription)
             {
-                _gameModel.ReactionsMap.Add(CreateKey(reactionDesc.Elements), new Reaction(reactionDesc.Elements, reactionDesc.ResultElements, CreateEffects(reactionDesc.Effects)));
-            }
-            
-            foreach (var presenters in _elementsPresenters.Values)
-            {
-                foreach (var presenter in presenters)
-                {
-                    presenter.Subscribe();
-                }
+                _gameModel.ReactionsMap.Add(CreateKey(reactionDesc.Elements), 
+                    new Reaction(reactionDesc.Elements, reactionDesc.ResultElements, CreateEffects(reactionDesc.Effects)));
             }
 
+            foreach (var capacityView in capacityesInitial)
+            {
+                capacityView.Id = numberId;
+                
+                List<Element> elements = new List<Element>();
+                foreach (var element in capacityView.InitialElements)
+                {
+                    Element newElement = new Element(element.Name, element.Formula, element.EnvironmentType, Color.white);
+                    elements.Add(newElement);
+                }
+
+                Capacity newCapacity = new Capacity(numberId, elements, capacityView.transform.position,
+                    capacityView.transform.rotation, capacityView.gameObject.layer, new Vector3(-130, 0, 0),
+                    capacityView.PointPositionTilt.position);
+                _gameModel.CapacityesMap.Add(numberId, newCapacity);
+                _gameView.CurrentCapacityes.Add(numberId, capacityView);
+                numberId++;
+
+                List<IPresenter> presenters = new()
+                {
+                    new OpenCloseInfoWindowPresenter(newCapacity, capacityView),
+                    new ChangeTextInfoPresenter(newCapacity, capacityView)
+                };
+                
+                _elementsPresenters.Add(newCapacity, presenters);
+
+                foreach (var presentersValue in _elementsPresenters.Values)
+                {
+                    foreach (var presenter in presentersValue)
+                    {
+                        presenter.Subscribe();
+                    }
+                }
+            }
+            
             InitializeTextInfo();
         }
 
 
         private void InitializeTextInfo()
         {
-            foreach (var value in _gameModel.ElementsMap.Values)
+            foreach (var value in _gameModel.CapacityesMap.Values)
             {
-                value.ChangeText(value.Formula);
+                string newText = String.Empty;
+                for (int i = 0; i < value.CurrentElements.Count; i++)
+                {
+                    if (i == value.CurrentElements.Count - 1)
+                    {
+                        newText += value.CurrentElements[i].Formula;
+                    }
+                    else
+                    {
+                        newText += value.CurrentElements[i].Formula + " + ";
+                    }
+                }
+                value.ChangeText(newText);
             }
         }
 
@@ -113,7 +137,6 @@ namespace GameModelDir
             {
                 effects[i] = effectsDescrs[i].GetEffect();
             }
-
             return effects;
         }
     }

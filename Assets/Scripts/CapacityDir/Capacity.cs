@@ -1,38 +1,37 @@
 ﻿using System;
-using Description_Scripts;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CapacityDir
 {
     public class Capacity
     {
-        public string Name;
-        public string Formula;
-        public EnvironmentType EnvironmentType;
-        public Vector3 InitialPositin;
-        public Vector3 RotationTilt;
-        public Quaternion InitialRotation;
-        public LayerMask InitialLayer;
-        public Vector3 PointPositionTilt;
+        public List<Element> CurrentElements;
+        public readonly int Id;
+        public readonly Vector3 InitialPositin;
+        public readonly Quaternion InitialRotation;
+        public readonly LayerMask InitialLayer;
+        public readonly Vector3 RotationTilt;
+        public readonly Vector3 PointPositionTilt;
+        
         public bool IsOpenInformationWindow;
-
+        
         public event Action OpenedInfoWindow;
         public event Action CloseInfoWindow;
         public event Action<string> ChangedTextInfo;
 
-        public Capacity(string name, string formula, EnvironmentType environmentType, Vector3 initialPosition, 
-            Quaternion initialRotation, Vector3 rotationTilt, LayerMask initialLayer, Vector3 pointPositionTilt)
+        public Capacity(int id, List<Element> currentElement, Vector3 initialPositin, Quaternion initialRotation,
+            LayerMask initialLayer, Vector3 rotationTilt, Vector3 pointPositionTilt)
         {
-            Name = name;
-            Formula = formula;
-            EnvironmentType = environmentType;
-            InitialPositin = initialPosition;
+            Id = id;
+            CurrentElements = currentElement;
+            InitialPositin = initialPositin;
             InitialRotation = initialRotation;
-            RotationTilt = rotationTilt;
             InitialLayer = initialLayer;
+            RotationTilt = rotationTilt;
             PointPositionTilt = pointPositionTilt;
         }
-
+        
         public void OpenInformationWindow()
         {
             IsOpenInformationWindow = true;

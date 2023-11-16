@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace CapacityDir
 {
-    public class NewElement
+    public class Element
     {
         public readonly string Name;
         public readonly string Formula;
         public readonly EnvironmentType EnvironmentType;
         public readonly Color Color;
 
-        public NewElement(string name, string formula, EnvironmentType environmentType, Color color)
+        public Element(string name, string formula, EnvironmentType environmentType, Color color)
         {
             Name = name;
             Formula = formula;

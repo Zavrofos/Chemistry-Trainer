@@ -35,15 +35,15 @@ namespace CapacityDir
             CapacityView selectedCapacity = cursorModel.SelectedTarget.GetComponent<CapacityView>();
             if (cursorModel.TargetAtGunPoint.TryGetComponent(out CapacityView capacity))
             {
-                selectedCapacity.transform.rotation = Quaternion.Euler(_gameModel.ElementsMap[capacity.InitialElement.Name].RotationTilt);
+                selectedCapacity.transform.rotation = Quaternion.Euler(_gameModel.CapacityesMap[capacity.Id].RotationTilt);
                 selectedCapacity.transform.position =
-                    _gameModel.ElementsMap[capacity.InitialElement.Name].PointPositionTilt;
+                    _gameModel.CapacityesMap[capacity.Id].PointPositionTilt;
                 cursorModel.CurrentState = CursorState.CapacityTilt;
             }
             else
             {
                 selectedCapacity.transform.rotation =
-                    _gameModel.ElementsMap[selectedCapacity.InitialElement.Name].InitialRotation;
+                    _gameModel.CapacityesMap[selectedCapacity.Id].InitialRotation;
                 cursorModel.CurrentState = CursorState.CapacitySelected;
             }
         }

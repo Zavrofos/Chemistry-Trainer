@@ -2,7 +2,7 @@
 {
     public class ChangeTextInfoPresenter : IPresenter
     {
-        private readonly CapacityDir.Capacity _capacityModel;
+        private readonly Capacity _capacityModel;
         private readonly CapacityView _capacityView;
 
         public ChangeTextInfoPresenter(CapacityDir.Capacity capacityModel, CapacityView capacityView)

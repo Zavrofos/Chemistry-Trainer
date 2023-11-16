@@ -33,7 +33,7 @@ namespace Cursor
             
             if (_gameModel.CursorModel.TargetAtGunPoint.TryGetComponent(out CapacityView capacity))
             {
-                _gameModel.ElementsMap[capacity.InitialElement.Name].CloseInformationWindow();
+                _gameModel.CapacityesMap[capacity.Id].CloseInformationWindow();
                 
                 _gameModel.CursorModel.CurrentState = CursorState.CapacitySelected;
                 _gameModel.CursorModel.SelectedTarget = _gameModel.CursorModel.TargetAtGunPoint;
