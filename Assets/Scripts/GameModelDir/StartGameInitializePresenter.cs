@@ -82,7 +82,8 @@ namespace GameModelDir
                     new OpenCloseInfoWindowPresenter(newCapacity, capacityView),
                     new DisplayTextInfoPresenter(newCapacity, capacityView), 
                     new AddingElementsToCapacityPresenter(newCapacity, capacityView, _gameModel),
-                    new EmptyCapacityPresenter(newCapacity, capacityView)
+                    new EmptyCapacityPresenter(newCapacity, capacityView),
+                    new ReturnToInitialPositionCapacityPresenter(newCapacity, capacityView, _gameModel)
                 };
                 
                 _elementsPresenters.Add(newCapacity, presenters);

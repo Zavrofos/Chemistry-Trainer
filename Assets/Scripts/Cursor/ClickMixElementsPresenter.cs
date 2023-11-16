@@ -34,7 +34,8 @@ namespace Cursor
             
             _gameModel.CapacityesMap[capacityViewTarget.Id].AddElement(_gameModel.CapacityesMap[capacityViewSelected.Id].CurrentElements);
             _gameModel.CapacityesMap[capacityViewSelected.Id].EmptyCapacity();
-            _gameModel.CursorModel.CurrentState = CursorState.CapacitySelected;
+            _gameModel.CapacityesMap[capacityViewSelected.Id].ReturnToInitialPosition();
+            
         }
     }
 }

@@ -30,8 +30,7 @@ namespace CapacityDir
         private void OnTiltCapacity(GameObject target)
         {
             CursorModel cursorModel = _gameModel.CursorModel;
-            
-            if (cursorModel.CurrentState == CursorState.Idle) return;
+            if (cursorModel.CurrentState != CursorState.CapacitySelected) return;
             CapacityView selectedCapacity = cursorModel.SelectedTarget.GetComponent<CapacityView>();
             if (cursorModel.TargetAtGunPoint.TryGetComponent(out CapacityView capacity))
             {
@@ -39,12 +38,6 @@ namespace CapacityDir
                 selectedCapacity.transform.position =
                     _gameModel.CapacityesMap[capacity.Id].PointPositionTilt;
                 cursorModel.CurrentState = CursorState.CapacityTilt;
-            }
-            else
-            {
-                selectedCapacity.transform.rotation =
-                    _gameModel.CapacityesMap[selectedCapacity.Id].InitialRotation;
-                cursorModel.CurrentState = CursorState.CapacitySelected;
             }
         }
     }

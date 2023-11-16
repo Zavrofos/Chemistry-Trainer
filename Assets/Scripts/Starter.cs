@@ -26,6 +26,7 @@ public class Starter : MonoBehaviour
             new ClickMixElementsPresenter(GameModel, GameView),
             new ClickTakingCapacityPresenter(GameModel, GameView),
             new TiltingCapacityPresenter(GameModel, GameView),
+            new CancelTiltPresenter(GameModel, GameView)
         };
         Updaters = new List<IUpdater>()
         {
