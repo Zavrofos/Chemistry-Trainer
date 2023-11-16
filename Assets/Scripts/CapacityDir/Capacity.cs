@@ -13,6 +13,7 @@ namespace CapacityDir
         public Vector3 RotationTilt;
         public Quaternion InitialRotation;
         public LayerMask InitialLayer;
+        public Vector3 PointPositionTilt;
         public bool IsOpenInformationWindow;
 
         public event Action OpenedInfoWindow;
@@ -20,7 +21,7 @@ namespace CapacityDir
         public event Action<string> ChangedTextInfo;
 
         public Capacity(string name, string formula, EnvironmentType environmentType, Vector3 initialPosition, 
-            Quaternion initialRotation, Vector3 rotationTilt, LayerMask initialLayer)
+            Quaternion initialRotation, Vector3 rotationTilt, LayerMask initialLayer, Vector3 pointPositionTilt)
         {
             Name = name;
             Formula = formula;
@@ -29,6 +30,7 @@ namespace CapacityDir
             InitialRotation = initialRotation;
             RotationTilt = rotationTilt;
             InitialLayer = initialLayer;
+            PointPositionTilt = pointPositionTilt;
         }
 
         public void OpenInformationWindow()

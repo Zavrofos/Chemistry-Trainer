@@ -11,5 +11,6 @@ namespace CapacityDir
         public ElementDescr InitialElement;
         public GameObject InfoWindow;
         public TMP_Text InfoText;
+        public Transform PointPositionTilt;
     }
 }

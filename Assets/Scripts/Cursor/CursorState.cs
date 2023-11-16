@@ -3,6 +3,7 @@
     public enum CursorState
     {
         Idle,
-        CapacitySelected
+        CapacitySelected,
+        CapacityTilt
     }
 }

@@ -31,16 +31,20 @@ namespace CapacityDir
         {
             CursorModel cursorModel = _gameModel.CursorModel;
             
-            if (cursorModel.CurrentState != CursorState.CapacitySelected) return;
+            if (cursorModel.CurrentState == CursorState.Idle) return;
             CapacityView selectedCapacity = cursorModel.SelectedTarget.GetComponent<CapacityView>();
             if (cursorModel.TargetAtGunPoint.TryGetComponent(out CapacityView capacity))
             {
                 selectedCapacity.transform.rotation = Quaternion.Euler(_gameModel.ElementsMap[capacity.InitialElement.Name].RotationTilt);
+                selectedCapacity.transform.position =
+                    _gameModel.ElementsMap[capacity.InitialElement.Name].PointPositionTilt;
+                cursorModel.CurrentState = CursorState.CapacityTilt;
             }
             else
             {
                 selectedCapacity.transform.rotation =
                     _gameModel.ElementsMap[selectedCapacity.InitialElement.Name].InitialRotation;
+                cursorModel.CurrentState = CursorState.CapacitySelected;
             }
         }
     }

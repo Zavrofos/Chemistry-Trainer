@@ -53,7 +53,8 @@ namespace GameModelDir
                     elementDescr.transform.position,
                     elementDescr.transform.rotation,
                     new Vector3(-130, 0, 0),
-                    elementDescr.gameObject.layer);
+                    elementDescr.gameObject.layer,
+                    elementDescr.PointPositionTilt.position);
 
                 List<IPresenter> Presenters = new()
                 {
