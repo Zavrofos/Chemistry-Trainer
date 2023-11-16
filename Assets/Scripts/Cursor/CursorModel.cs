@@ -6,12 +6,21 @@ namespace Cursor
     public class CursorModel
     {
         public GameObject TargetAtGunPoint { get; private set; }
-        public event Action<GameObject> ChangedTarget;
-        
-        public void ChangeTarget(GameObject newTarget)
+        public GameObject SelectedTarget;
+        public Vector3 CursorPosition;
+        public CursorState CurrentState = CursorState.Idle;
+        public event Action<GameObject> AimedAtTheTarget;
+        public event Action ClickedMouse0;
+
+        public void SetTargetAtGunPoint(GameObject newTarget)
         {
             TargetAtGunPoint = newTarget;
-            ChangedTarget?.Invoke(newTarget);
+            AimedAtTheTarget?.Invoke(newTarget);
+        }
+
+        public void ClickMouse0()
+        {
+            ClickedMouse0?.Invoke();
         }
     }
 }
