@@ -32,6 +32,7 @@ namespace CapacityDir
             _view.transform.rotation = _model.InitialRotation;
             _view.gameObject.layer = _model.InitialLayer;
             _gameModel.CursorModel.CurrentState = CursorState.Idle;
+            _model.DisplayInfoText();
             _gameModel.CursorModel.SelectedTarget = null;
         }
     }

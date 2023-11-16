@@ -1243,7 +1243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7722657737264513954, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}
       propertyPath: InitialElements.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7722657737264513954, guid: f2510f8bf977e5446a3e84841b054ae4, type: 3}
       propertyPath: InitialElements.Array.data[0]

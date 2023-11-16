@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using CapacityDir;
 using Cursor;
-using Description_Objects;
-using Description_Scripts;
 using GameModelDir;
 using GameViewDir;
 using UnityEngine;
@@ -23,10 +19,11 @@ public class Starter : MonoBehaviour
         {
             new StartGameInitializePresenter(GameModel, GameView),
             new CheckingCapacityHoverPresenter(GameModel, GameView),
-            new ClickMixElementsPresenter(GameModel, GameView),
-            new ClickTakingCapacityPresenter(GameModel, GameView),
             new TiltingCapacityPresenter(GameModel, GameView),
-            new CancelTiltPresenter(GameModel, GameView)
+            new CancelTiltPresenter(GameModel, GameView),
+            new ClickPresenter(GameModel, GameView),
+            new TakeCapacityPresenter(GameModel, GameView),
+            new MixElementsPresenter(GameModel, GameView)
         };
         Updaters = new List<IUpdater>()
         {

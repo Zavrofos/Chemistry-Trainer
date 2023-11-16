@@ -12,6 +12,9 @@ namespace Cursor
         public event Action<GameObject> AimedAtTheTarget;
         public event Action ClickedMouse0;
 
+        public event Action TakedCapacity;
+        public event Action MixedElements;
+
         public void SetTargetAtGunPoint(GameObject newTarget)
         {
             TargetAtGunPoint = newTarget;
@@ -21,6 +24,16 @@ namespace Cursor
         public void ClickMouse0()
         {
             ClickedMouse0?.Invoke();
+        }
+
+        public void TakeCapacity()
+        {
+            TakedCapacity?.Invoke();
+        }
+
+        public void MixElements()
+        {
+            MixedElements?.Invoke();
         }
     }
 }
