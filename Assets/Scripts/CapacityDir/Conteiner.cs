@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Description_Objects;
 using UnityEngine;
 
 namespace CapacityDir
 {
     public class Conteiner
     {
-        public List<Element> PreviousElements = new();
-        public List<Element> CurrentElements;
+        public List<ElementDescr> PreviousElements = new();
+        public List<ElementDescr> CurrentElements;
         public readonly int Id;
         public readonly Vector3 InitialPositin;
         public readonly Quaternion InitialRotation;
@@ -20,11 +21,11 @@ namespace CapacityDir
         public event Action OpenedInfoWindow;
         public event Action CloseInfoWindow;
         public event Action ChangedTextInfo;
-        public event Action<List<Element>> AddedElement;
+        public event Action<List<ElementDescr>> AddedElement;
         public event Action EmptiedCapacity;
         public event Action ReturnedToInitialPosition;
 
-        public Conteiner(int id, List<Element> currentElement, Vector3 initialPositin, Quaternion initialRotation,
+        public Conteiner(int id, List<ElementDescr> currentElement, Vector3 initialPositin, Quaternion initialRotation,
             LayerMask initialLayer, Vector3 rotationTilt, Vector3 pointPositionTilt)
         {
             Id = id;
@@ -53,7 +54,7 @@ namespace CapacityDir
             ChangedTextInfo?.Invoke();
         }
 
-        public void AddElement(List<Element> newElement)
+        public void AddElement(List<ElementDescr> newElement)
         {
             AddedElement?.Invoke(newElement);
         }

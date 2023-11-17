@@ -31,10 +31,18 @@ namespace CapacityDir
             _model.AddedElement -= OnAddNewElements;
         }
 
-        private void OnAddNewElements(List<Element> elements)
+        private void OnAddNewElements(List<ElementDescr> elements)
         {
             _model.PreviousElements.Clear();
-            _model.CurrentElements.AddRange(elements);
+
+            foreach (var element in elements)
+            {
+                if (!_model.CurrentElements.Contains(element))
+                {
+                    _model.CurrentElements.Add(element);
+                }
+            }
+            
             var currentElements = _model.CurrentElements;
             
             string key = CreateKey(_model.CurrentElements);
@@ -42,13 +50,11 @@ namespace CapacityDir
             
             if(_gameModel.CollectionsOfReactions.ReactionsMap.ContainsKey(key))
             {
-                List<Element> newElements = new List<Element>();
+                List<ElementDescr> newElements = new List<ElementDescr>();
                 foreach (var element in _gameModel.CollectionsOfReactions.ReactionsMap[key].ResultElements)
                 {
                     ElementDescr descriptionEl = _gameModel.ElementsInfoMap[element];
-                    Element newElement = new Element(descriptionEl.Name, descriptionEl.Formula,
-                        descriptionEl.EnvironmentType);
-                    newElements.Add(newElement);
+                    newElements.Add(descriptionEl);
 
                     changed = true;
                 }
@@ -65,7 +71,7 @@ namespace CapacityDir
             _model.DisplayInfoText();
         }
         
-        private string CreateKey(List<Element> elements)
+        private string CreateKey(List<ElementDescr> elements)
         {
             string[] names = new string[elements.Count];
 

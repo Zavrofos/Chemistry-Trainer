@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CapacityDir;
+using Description_Objects;
 using GameModelDir;
 using GameViewDir;
 using UnityEngine;
@@ -32,11 +33,10 @@ namespace Conteiners
         private void OnAddConteiner(ConteinerView conteinerView)
         {
             conteinerView.Id = _gameModel.CollectionOfConteiners.IdCount;
-            List<Element> elements = new List<Element>();
+            List<ElementDescr> elements = new List<ElementDescr>();
             foreach (var element in conteinerView.InitialElements)
             {
-                Element newElement = new Element(element.Name, element.Formula, element.EnvironmentType);
-                elements.Add(newElement);
+                elements.Add(element);
             }
 
             Conteiner newConteiner = new Conteiner(_gameModel.CollectionOfConteiners.IdCount, elements, conteinerView.transform.position,
