@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Capacity;
+using CapacityDir;
+using Conteiners;
 using Cursor;
-using Description_Objects;
-using Description_Scripts;
 using GameModelDir;
 using GameViewDir;
+using Reactions;
 using UnityEngine;
 
 public class Starter : MonoBehaviour
@@ -22,11 +20,23 @@ public class Starter : MonoBehaviour
         Presenters = new List<IPresenter>()
         {
             new StartGameInitializePresenter(GameModel, GameView),
-            new CheckingCapacityHoverPresenter(GameModel, GameView)
+            new InitializeCollectionOfReactionsPresenter(GameModel, GameView),
+            new InitializeCollectionOfConteinersPresenter(GameModel, GameView),
+            new AddConteinerPresenter(GameModel, GameView),
+            
+            new CheckingConteinerHoverPresenter(GameModel, GameView),
+            new TiltingConteinerPresenter(GameModel, GameView),
+            new CancelTiltPresenter(GameModel, GameView),
+            new ClickPresenter(GameModel, GameView),
+            new TakeConteinerPresenter(GameModel, GameView),
+            new MixElementsPresenter(GameModel, GameView)
         };
         Updaters = new List<IUpdater>()
         {
-            new HoverUpdater(GameModel, GameView)
+            new TargetingUpdater(GameModel, GameView),
+            new ClickMouse0Updater(GameModel, GameView),
+            new MoveSelectedConteinerToMouseUpdater(GameModel, GameView),
+            new CursorPositionUpdater(GameModel, GameView)
         };
     }
 
