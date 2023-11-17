@@ -1,24 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using CapacityDir;
+using Conteiners;
 using Cursor;
 using Description_Objects;
+using Reactions;
 
 namespace GameModelDir
 {
     public class GameModel
     {
-        public Dictionary<int, Conteiner> CapacityesMap;
+        public CollectionsOfReactions CollectionsOfReactions;
+        public CollectionOfConteiners CollectionOfConteiners;
         public Dictionary<string, ElementDescr> ElementsInfoMap;
-        public Dictionary<string, Reaction> ReactionsMap;
         public CursorModel CursorModel;
+        public GameState CurrentState = GameState.Idle;
         public event Action Initialized;
 
         public GameModel()
         {
-            CapacityesMap = new Dictionary<int, Conteiner>();
+            CollectionsOfReactions = new CollectionsOfReactions();
+            CollectionOfConteiners = new CollectionOfConteiners();
             ElementsInfoMap = new Dictionary<string, ElementDescr>();
-            ReactionsMap = new Dictionary<string, Reaction>();
             CursorModel = new CursorModel();
         }
     

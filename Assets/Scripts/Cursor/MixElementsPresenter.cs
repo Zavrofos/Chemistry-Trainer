@@ -29,10 +29,11 @@ namespace Cursor
         {
             ConteinerView conteinerViewTarget = _gameModel.CursorModel.TargetAtGunPoint.GetComponent<ConteinerView>();
             ConteinerView conteinerViewSelected = _gameModel.CursorModel.SelectedTarget.GetComponent<ConteinerView>();
-            
-            _gameModel.CapacityesMap[conteinerViewTarget.Id].AddElement(_gameModel.CapacityesMap[conteinerViewSelected.Id].CurrentElements);
-            _gameModel.CapacityesMap[conteinerViewSelected.Id].EmptyCapacity();
-            _gameModel.CapacityesMap[conteinerViewSelected.Id].ReturnToInitialPosition();
+
+            var conteiners = _gameModel.CollectionOfConteiners.ConteinersMap[conteinerViewSelected.Id];
+            _gameModel.CollectionOfConteiners.ConteinersMap[conteinerViewTarget.Id].AddElement(conteiners.CurrentElements);
+            conteiners.EmptyCapacity();
+            conteiners.ReturnToInitialPosition();
         }
     }
 }

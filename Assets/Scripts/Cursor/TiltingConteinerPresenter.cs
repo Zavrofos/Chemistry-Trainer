@@ -1,10 +1,9 @@
-﻿using Cursor;
+﻿using CapacityDir;
 using GameModelDir;
 using GameViewDir;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace CapacityDir
+namespace Cursor
 {
     public class TiltingConteinerPresenter : IPresenter
     {
@@ -30,14 +29,14 @@ namespace CapacityDir
         private void OnTiltCapacity(GameObject target)
         {
             CursorModel cursorModel = _gameModel.CursorModel;
-            if (cursorModel.CurrentState != CursorState.CapacitySelected) return;
+            if (_gameModel.CurrentState != GameState.CapacitySelected) return;
             ConteinerView selectedConteiner = cursorModel.SelectedTarget.GetComponent<ConteinerView>();
             if (cursorModel.TargetAtGunPoint.TryGetComponent(out ConteinerView capacity))
             {
-                selectedConteiner.transform.rotation = Quaternion.Euler(_gameModel.CapacityesMap[capacity.Id].RotationTilt);
+                selectedConteiner.transform.rotation = Quaternion.Euler(_gameModel.CollectionOfConteiners.ConteinersMap[capacity.Id].RotationTilt);
                 selectedConteiner.transform.position =
-                    _gameModel.CapacityesMap[capacity.Id].PointPositionTilt;
-                cursorModel.CurrentState = CursorState.CapacityTilt;
+                    _gameModel.CollectionOfConteiners.ConteinersMap[capacity.Id].PointPositionTilt;
+                _gameModel.CurrentState = GameState.CapacityTilt;
             }
         }
     }

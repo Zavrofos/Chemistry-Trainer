@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using CapacityDir;
+using Conteiners;
 using Cursor;
 using GameModelDir;
 using GameViewDir;
+using Reactions;
 using UnityEngine;
 
 public class Starter : MonoBehaviour
@@ -18,6 +20,10 @@ public class Starter : MonoBehaviour
         Presenters = new List<IPresenter>()
         {
             new StartGameInitializePresenter(GameModel, GameView),
+            new InitializeCollectionOfReactionsPresenter(GameModel, GameView),
+            new InitializeCollectionOfConteinersPresenter(GameModel, GameView),
+            new AddConteinerPresenter(GameModel, GameView),
+            
             new CheckingConteinerHoverPresenter(GameModel, GameView),
             new TiltingConteinerPresenter(GameModel, GameView),
             new CancelTiltPresenter(GameModel, GameView),

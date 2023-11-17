@@ -28,13 +28,13 @@ namespace Cursor
 
         private void OnCancelTilt(GameObject obj)
         {
+            if (_gameModel.CurrentState != GameState.CapacityTilt) return;
             CursorModel cursorModel = _gameModel.CursorModel;
-            if (cursorModel.CurrentState != CursorState.CapacityTilt) return;
             ConteinerView selectedConteiner = cursorModel.SelectedTarget.GetComponent<ConteinerView>();
-            if (!cursorModel.TargetAtGunPoint.GetComponent<ConteinerView>())
+            if (!cursorModel.TargetAtGunPoint.TryGetComponent<ConteinerView>(out _))
             {
-                selectedConteiner.transform.rotation = _gameModel.CapacityesMap[selectedConteiner.Id].InitialRotation;
-                cursorModel.CurrentState = CursorState.CapacitySelected;
+                selectedConteiner.transform.rotation = _gameModel.CollectionOfConteiners.ConteinersMap[selectedConteiner.Id].InitialRotation;
+                _gameModel.CurrentState = GameState.CapacitySelected;
             }
         }
     }

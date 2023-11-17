@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Description_Objects;
+using GameModelDir;
 using TMPro;
 using UnityEngine;
 
@@ -12,5 +14,7 @@ namespace CapacityDir
         public GameObject InfoWindow;
         public TMP_Text InfoText;
         public Transform PointPositionTilt;
+
+        public Renderer Filler;
     }
 }

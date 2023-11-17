@@ -26,12 +26,12 @@ namespace Cursor
 
         private void OnClick()
         {
-            if (_gameModel.CursorModel.CurrentState == CursorState.Idle)
+            if (_gameModel.CurrentState == GameState.Idle)
             {
-                _gameModel.CursorModel.TakeCapacity();
+                _gameModel.CursorModel.TakeContainer();
             }
 
-            if (_gameModel.CursorModel.CurrentState == CursorState.CapacityTilt)
+            if (_gameModel.CurrentState == GameState.CapacityTilt)
             {
                 _gameModel.CursorModel.MixElements();
             }

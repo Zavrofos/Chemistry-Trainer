@@ -2,7 +2,7 @@
 using GameViewDir;
 using UnityEngine;
 
-namespace CapacityDir
+namespace Cursor
 {
     public class CheckingConteinerHoverPresenter : IPresenter
     {
@@ -31,11 +31,11 @@ namespace CapacityDir
             {
                 if (capacityView.gameObject == target)
                 {
-                    _gameModel.CapacityesMap[capacityView.Id].OpenInformationWindow();
+                    _gameModel.CollectionOfConteiners.ConteinersMap[capacityView.Id].OpenInformationWindow();
                 }
-                else if (_gameModel.CapacityesMap[capacityView.Id].IsOpenInformationWindow)
+                else if (_gameModel.CollectionOfConteiners.ConteinersMap[capacityView.Id].IsOpenInformationWindow)
                 {
-                    _gameModel.CapacityesMap[capacityView.Id].CloseInformationWindow();
+                    _gameModel.CollectionOfConteiners.ConteinersMap[capacityView.Id].CloseInformationWindow();
                 }
             }
         }

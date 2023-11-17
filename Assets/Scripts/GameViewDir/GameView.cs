@@ -3,6 +3,7 @@ using CapacityDir;
 using Description_Objects;
 using Description_Scripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GameViewDir
 {
@@ -10,7 +11,7 @@ namespace GameViewDir
     {
         public List<ReactionDesc> ReactionsInfo;
         public List<ElementDescr> ElementsInfo;
-        public List<ConteinerView> InitialCapacityes;
+        [FormerlySerializedAs("InitialCapacityes")] public List<ConteinerView> InitialConteiners;
         
         public Dictionary<int, ConteinerView> CurrentCapacityes = new();
     }

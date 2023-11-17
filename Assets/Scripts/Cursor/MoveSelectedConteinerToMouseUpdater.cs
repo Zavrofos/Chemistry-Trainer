@@ -17,7 +17,7 @@ namespace Cursor
 
         public void Update()
         {
-            if (_gameModel.CursorModel.CurrentState != CursorState.CapacitySelected) return;
+            if (_gameModel.CurrentState != GameState.CapacitySelected) return;
             _gameModel.CursorModel.SelectedTarget.transform.position = _gameModel.CursorModel.CursorPosition;
         }
     }

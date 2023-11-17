@@ -5,10 +5,10 @@ namespace Cursor
 {
     public class CursorModel
     {
-        public GameObject TargetAtGunPoint { get; private set; }
+        public GameObject TargetAtGunPoint;
         public GameObject SelectedTarget;
         public Vector3 CursorPosition;
-        public CursorState CurrentState = CursorState.Idle;
+        
         public event Action<GameObject> AimedAtTheTarget;
         public event Action ClickedMouse0;
         public event Action TakedCapacity;
@@ -25,7 +25,7 @@ namespace Cursor
             ClickedMouse0?.Invoke();
         }
 
-        public void TakeCapacity()
+        public void TakeContainer()
         {
             TakedCapacity?.Invoke();
         }

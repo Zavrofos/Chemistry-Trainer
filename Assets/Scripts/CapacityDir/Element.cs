@@ -9,14 +9,12 @@ namespace CapacityDir
         public readonly string Name;
         public readonly string Formula;
         public readonly EnvironmentType EnvironmentType;
-        public readonly Color Color;
 
-        public Element(string name, string formula, EnvironmentType environmentType, Color color)
+        public Element(string name, string formula, EnvironmentType environmentType)
         {
             Name = name;
             Formula = formula;
             EnvironmentType = environmentType;
-            Color = color;
         }
     }
 }

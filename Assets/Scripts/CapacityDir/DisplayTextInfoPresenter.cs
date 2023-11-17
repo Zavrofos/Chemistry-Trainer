@@ -25,10 +25,32 @@ namespace CapacityDir
 
         private void OnChangeTextInfo()
         {
-            string newText = String.Empty;
             if (_conteinerModel.CurrentElements.Count == 0)
             {
-                newText = "Empty";
+                _conteinerView.InfoText.text =  "Empty";
+                return;
+            }
+            
+            string newText = string.Empty;
+
+            if (_conteinerModel.PreviousElements.Count != 0)
+            {
+                for (int i = 0; i < _conteinerModel.PreviousElements.Count; i++)
+                {
+                    if (i == _conteinerModel.PreviousElements.Count - 1)
+                    {
+                        newText += _conteinerModel.PreviousElements[i].Formula;
+                    }
+                    else
+                    {
+                        newText += _conteinerModel.PreviousElements[i].Formula + " + ";
+                    }
+                }
+            }
+            
+            if (newText != string.Empty)
+            {
+                newText += " -> ";
             }
 
             for (int i = 0; i < _conteinerModel.CurrentElements.Count; i++)

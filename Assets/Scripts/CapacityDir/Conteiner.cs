@@ -6,6 +6,7 @@ namespace CapacityDir
 {
     public class Conteiner
     {
+        public List<Element> PreviousElements = new();
         public List<Element> CurrentElements;
         public readonly int Id;
         public readonly Vector3 InitialPositin;

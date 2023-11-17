@@ -33,21 +33,35 @@ namespace CapacityDir
 
         private void OnAddNewElements(List<Element> elements)
         {
+            _model.PreviousElements.Clear();
             _model.CurrentElements.AddRange(elements);
+            var currentElements = _model.CurrentElements;
+            
             string key = CreateKey(_model.CurrentElements);
-            if(_gameModel.ReactionsMap.ContainsKey(key))
+            bool changed = false;
+            
+            if(_gameModel.CollectionsOfReactions.ReactionsMap.ContainsKey(key))
             {
                 List<Element> newElements = new List<Element>();
-                foreach (var element in _gameModel.ReactionsMap[key].ResultElements)
+                foreach (var element in _gameModel.CollectionsOfReactions.ReactionsMap[key].ResultElements)
                 {
                     ElementDescr descriptionEl = _gameModel.ElementsInfoMap[element];
                     Element newElement = new Element(descriptionEl.Name, descriptionEl.Formula,
-                        descriptionEl.EnvironmentType, Color.white);
+                        descriptionEl.EnvironmentType);
                     newElements.Add(newElement);
+
+                    changed = true;
                 }
+                
                 _model.CurrentElements = newElements;
-                _gameModel.ReactionsMap[key].StartReaction(_view);
+                _gameModel.CollectionsOfReactions.ReactionsMap[key].StartReaction(_view);
             }
+
+            if (changed)
+            {
+                _model.PreviousElements.AddRange(currentElements);
+            }
+            
             _model.DisplayInfoText();
         }
         

@@ -1,6 +1,6 @@
 ﻿namespace Cursor
 {
-    public enum CursorState
+    public enum GameState
     {
         Idle,
         CapacitySelected,
