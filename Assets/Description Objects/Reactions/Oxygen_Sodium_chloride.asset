@@ -17,4 +17,5 @@ MonoBehaviour:
   - Sodium_chloride
   ResultElements:
   - Sulfuric_acid
-  Effects: []
+  Effects:
+  - {fileID: 11400000, guid: d47af7110e809714bb7674b929f5344c, type: 2}

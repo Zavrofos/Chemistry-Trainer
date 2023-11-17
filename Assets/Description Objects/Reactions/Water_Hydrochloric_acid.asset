@@ -17,4 +17,5 @@ MonoBehaviour:
   - Hydrochloric_acid
   ResultElements:
   - Hydrogen
-  Effects: []
+  Effects:
+  - {fileID: 11400000, guid: 2c9c9f84f13a2a849b7eb68589375163, type: 2}
