@@ -16,5 +16,6 @@ namespace CapacityDir
         public Transform PointPositionTilt;
 
         public Renderer Filler;
+        public ParticleSystem GazeEffectParticle;
     }
 }

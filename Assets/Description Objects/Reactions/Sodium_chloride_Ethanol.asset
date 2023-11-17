@@ -17,4 +17,5 @@ MonoBehaviour:
   - Ethanol
   ResultElements:
   - Sulfuric_acid
-  Effects: []
+  Effects:
+  - {fileID: 11400000, guid: 98467826c9d1bdb4d87a2d92fa970275, type: 2}

@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398f27c8819f4f98b26528cf4b57dd93, type: 3}
-  m_Name: Oxygen_Ethanol
+  m_Script: {fileID: 11500000, guid: 4cfda6e2850348f69336c5b715e5953b, type: 3}
+  m_Name: ChangeColor_Blue
   m_EditorClassIdentifier: 
-  Elements:
-  - Oxygen
-  - Ethanol
-  ResultElements:
-  - Sodium
-  Effects:
-  - {fileID: 11400000, guid: 25eb49318a2902b419b587a2783eecfd, type: 2}
+  Color: {r: 0.21226418, g: 0.5613392, b: 1, a: 1}

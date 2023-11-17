@@ -1,4 +1,5 @@
-﻿using GameModelDir;
+﻿using CapacityDir;
+using GameModelDir;
 
 namespace Effects
 {
@@ -6,7 +7,10 @@ namespace Effects
     {
         public void SetEffect(GameModel model)
         {
-            
+            if(model.CursorModel.TargetAtGunPoint.TryGetComponent(out ConteinerView container))
+            {
+                container.GazeEffectParticle.Play();
+            }
         }
     }
 }

@@ -17,4 +17,5 @@ MonoBehaviour:
   - Sodium_chloride
   ResultElements:
   - Hydrogen
-  Effects: []
+  Effects:
+  - {fileID: 11400000, guid: 25eb49318a2902b419b587a2783eecfd, type: 2}

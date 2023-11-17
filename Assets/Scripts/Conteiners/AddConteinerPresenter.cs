@@ -52,7 +52,9 @@ namespace Conteiners
                 new DisplayTextInfoPresenter(newConteiner, conteinerView), 
                 new AddingElementsToConteinerPresenter(newConteiner, conteinerView, _gameModel),
                 new EmptyConteinerPresenter(newConteiner, conteinerView),
-                new ReturnToInitialPositionConteinerPresenter(newConteiner, conteinerView, _gameModel)
+                new ReturnToInitialPositionConteinerPresenter(newConteiner, conteinerView, _gameModel),
+                new AddingFillerToConteinerPresenter(newConteiner, conteinerView, _gameModel),
+                new RemoveFillerPresenter(newConteiner, conteinerView)
             };
                 
             _conteinersPresenter.Add(newConteiner, presenters);

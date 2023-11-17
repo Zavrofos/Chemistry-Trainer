@@ -26,6 +26,7 @@ namespace CapacityDir
         private void OnClearCapacity()
         {
             _model.CurrentElements.Clear();
+            _model.RemoveFiller();
         }
     }
 }
