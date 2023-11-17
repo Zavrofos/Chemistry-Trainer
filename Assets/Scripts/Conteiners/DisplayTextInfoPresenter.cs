@@ -4,28 +4,28 @@ namespace CapacityDir
 {
     public class DisplayTextInfoPresenter : IPresenter
     {
-        private readonly Conteiner _conteinerModel;
+        private readonly Container _containerModel;
         private readonly ConteinerView _conteinerView;
 
-        public DisplayTextInfoPresenter(CapacityDir.Conteiner conteinerModel, ConteinerView conteinerView)
+        public DisplayTextInfoPresenter(CapacityDir.Container containerModel, ConteinerView conteinerView)
         {
-            _conteinerModel = conteinerModel;
+            _containerModel = containerModel;
             _conteinerView = conteinerView;
         }
 
         public void Subscribe()
         {
-            _conteinerModel.ChangedTextInfo += OnChangeTextInfo;
+            _containerModel.ChangedTextInfo += OnChangeTextInfo;
         }
 
         public void UnSubscribe()
         {
-            _conteinerModel.ChangedTextInfo += OnChangeTextInfo;
+            _containerModel.ChangedTextInfo += OnChangeTextInfo;
         }
 
         private void OnChangeTextInfo()
         {
-            if (_conteinerModel.CurrentElements.Count == 0)
+            if (_containerModel.CurrentElements.Count == 0)
             {
                 _conteinerView.InfoText.text =  "Empty";
                 return;
@@ -33,17 +33,17 @@ namespace CapacityDir
             
             string newText = string.Empty;
 
-            if (_conteinerModel.PreviousElements.Count != 0)
+            if (_containerModel.PreviousElements.Count != 0)
             {
-                for (int i = 0; i < _conteinerModel.PreviousElements.Count; i++)
+                for (int i = 0; i < _containerModel.PreviousElements.Count; i++)
                 {
-                    if (i == _conteinerModel.PreviousElements.Count - 1)
+                    if (i == _containerModel.PreviousElements.Count - 1)
                     {
-                        newText += _conteinerModel.PreviousElements[i].Formula;
+                        newText += _containerModel.PreviousElements[i].Formula;
                     }
                     else
                     {
-                        newText += _conteinerModel.PreviousElements[i].Formula + " + ";
+                        newText += _containerModel.PreviousElements[i].Formula + " + ";
                     }
                 }
             }
@@ -53,15 +53,15 @@ namespace CapacityDir
                 newText += " -> ";
             }
 
-            for (int i = 0; i < _conteinerModel.CurrentElements.Count; i++)
+            for (int i = 0; i < _containerModel.CurrentElements.Count; i++)
             {
-                if (i == _conteinerModel.CurrentElements.Count - 1)
+                if (i == _containerModel.CurrentElements.Count - 1)
                 {
-                    newText += _conteinerModel.CurrentElements[i].Formula;
+                    newText += _containerModel.CurrentElements[i].Formula;
                 }
                 else
                 {
-                    newText += _conteinerModel.CurrentElements[i].Formula + " + ";
+                    newText += _containerModel.CurrentElements[i].Formula + " + ";
                 }
             }
 

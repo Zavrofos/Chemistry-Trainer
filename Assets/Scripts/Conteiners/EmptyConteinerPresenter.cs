@@ -4,10 +4,10 @@ namespace CapacityDir
 {
     public class EmptyConteinerPresenter : IPresenter
     {
-        private readonly Conteiner _model;
+        private readonly Container _model;
         private readonly ConteinerView _view;
 
-        public EmptyConteinerPresenter(Conteiner model, ConteinerView view)
+        public EmptyConteinerPresenter(Container model, ConteinerView view)
         {
             _model = model;
             _view = view;

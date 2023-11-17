@@ -10,11 +10,11 @@ namespace CapacityDir
 {
     public class AddingElementsToConteinerPresenter : IPresenter
     {
-        private readonly Conteiner _model;
+        private readonly Container _model;
         private readonly ConteinerView _view;
         private readonly GameModel _gameModel;
 
-        public AddingElementsToConteinerPresenter(Conteiner model, ConteinerView view, GameModel gameModel)
+        public AddingElementsToConteinerPresenter(Container model, ConteinerView view, GameModel gameModel)
         {
             _model = model;
             _view = view;
@@ -38,7 +38,7 @@ namespace CapacityDir
             if (_model.CurrentElements.Count == 0)
             {
                 ConteinerView selectedConteiner = _gameModel.CursorModel.SelectedTarget.GetComponent<ConteinerView>();
-                _gameModel.CollectionOfConteiners.ConteinersMap[_view.Id].AddFiller(selectedConteiner.Filler);
+                _gameModel.CollectionOfContainers.ConteinersMap[_view.Id].AddFiller(selectedConteiner.Filler);
             }
 
             foreach (var element in elements)

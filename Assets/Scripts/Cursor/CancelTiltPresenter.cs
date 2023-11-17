@@ -33,7 +33,7 @@ namespace Cursor
             ConteinerView selectedConteiner = cursorModel.SelectedTarget.GetComponent<ConteinerView>();
             if (!cursorModel.TargetAtGunPoint.TryGetComponent<ConteinerView>(out _))
             {
-                selectedConteiner.transform.rotation = _gameModel.CollectionOfConteiners.ConteinersMap[selectedConteiner.Id].InitialRotation;
+                selectedConteiner.transform.rotation = _gameModel.CollectionOfContainers.ConteinersMap[selectedConteiner.Id].InitialRotation;
                 _gameModel.CurrentState = GameState.CapacitySelected;
             }
         }

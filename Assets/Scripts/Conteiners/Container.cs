@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CapacityDir
 {
-    public class Conteiner
+    public class Container
     {
         public List<ElementDescr> PreviousElements = new();
         public List<ElementDescr> CurrentElements;
@@ -28,7 +28,7 @@ namespace CapacityDir
         public event Action<Renderer> AddedFiller;
         public event Action RemovedFiller;
 
-        public Conteiner(int id, List<ElementDescr> currentElement, Vector3 initialPositin, Quaternion initialRotation,
+        public Container(int id, List<ElementDescr> currentElement, Vector3 initialPositin, Quaternion initialRotation,
             LayerMask initialLayer, Vector3 rotationTilt, Vector3 pointPositionTilt)
         {
             Id = id;

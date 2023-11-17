@@ -30,7 +30,7 @@ namespace Cursor
         {
             if (_gameModel.CursorModel.TargetAtGunPoint.TryGetComponent(out ConteinerView capacity))
             {
-                _gameModel.CollectionOfConteiners.ConteinersMap[capacity.Id].CloseInformationWindow();
+                _gameModel.CollectionOfContainers.ConteinersMap[capacity.Id].CloseInformationWindow();
                 _gameModel.CurrentState = GameState.CapacitySelected;
                 _gameModel.CursorModel.SelectedTarget = _gameModel.CursorModel.TargetAtGunPoint;
                 _gameModel.CursorModel.SelectedTarget.layer = LayerMask.NameToLayer($"IgnoreObject");

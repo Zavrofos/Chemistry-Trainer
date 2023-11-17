@@ -33,9 +33,9 @@ namespace Cursor
             ConteinerView selectedConteiner = cursorModel.SelectedTarget.GetComponent<ConteinerView>();
             if (cursorModel.TargetAtGunPoint.TryGetComponent(out ConteinerView capacity))
             {
-                selectedConteiner.transform.rotation = Quaternion.Euler(_gameModel.CollectionOfConteiners.ConteinersMap[capacity.Id].RotationTilt);
+                selectedConteiner.transform.rotation = Quaternion.Euler(_gameModel.CollectionOfContainers.ConteinersMap[capacity.Id].RotationTilt);
                 selectedConteiner.transform.position =
-                    _gameModel.CollectionOfConteiners.ConteinersMap[capacity.Id].PointPositionTilt;
+                    _gameModel.CollectionOfContainers.ConteinersMap[capacity.Id].PointPositionTilt;
                 _gameModel.CurrentState = GameState.CapacityTilt;
             }
         }

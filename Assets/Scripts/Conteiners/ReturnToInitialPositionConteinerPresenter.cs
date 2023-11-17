@@ -5,11 +5,11 @@ namespace CapacityDir
 {
     public class ReturnToInitialPositionConteinerPresenter : IPresenter
     {
-        private readonly Conteiner _model;
+        private readonly Container _model;
         private readonly ConteinerView _view;
         private readonly GameModel _gameModel;
 
-        public ReturnToInitialPositionConteinerPresenter(Conteiner model, ConteinerView view, GameModel gameModel)
+        public ReturnToInitialPositionConteinerPresenter(Container model, ConteinerView view, GameModel gameModel)
         {
             _model = model;
             _view = view;

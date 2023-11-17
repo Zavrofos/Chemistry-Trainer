@@ -11,7 +11,7 @@ namespace GameModelDir
     public class GameModel
     {
         public CollectionsOfReactions CollectionsOfReactions;
-        public CollectionOfConteiners CollectionOfConteiners;
+        public CollectionOfConteiners CollectionOfContainers;
         public Dictionary<string, ElementDescr> ElementsInfoMap;
         public CursorModel CursorModel;
         public GameState CurrentState = GameState.Idle;
@@ -20,7 +20,7 @@ namespace GameModelDir
         public GameModel()
         {
             CollectionsOfReactions = new CollectionsOfReactions();
-            CollectionOfConteiners = new CollectionOfConteiners();
+            CollectionOfContainers = new CollectionOfConteiners();
             ElementsInfoMap = new Dictionary<string, ElementDescr>();
             CursorModel = new CursorModel();
         }

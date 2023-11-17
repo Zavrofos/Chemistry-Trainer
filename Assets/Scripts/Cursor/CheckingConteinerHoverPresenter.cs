@@ -31,11 +31,11 @@ namespace Cursor
             {
                 if (capacityView.gameObject == target)
                 {
-                    _gameModel.CollectionOfConteiners.ConteinersMap[capacityView.Id].OpenInformationWindow();
+                    _gameModel.CollectionOfContainers.ConteinersMap[capacityView.Id].OpenInformationWindow();
                 }
-                else if (_gameModel.CollectionOfConteiners.ConteinersMap[capacityView.Id].IsOpenInformationWindow)
+                else if (_gameModel.CollectionOfContainers.ConteinersMap[capacityView.Id].IsOpenInformationWindow)
                 {
-                    _gameModel.CollectionOfConteiners.ConteinersMap[capacityView.Id].CloseInformationWindow();
+                    _gameModel.CollectionOfContainers.ConteinersMap[capacityView.Id].CloseInformationWindow();
                 }
             }
         }

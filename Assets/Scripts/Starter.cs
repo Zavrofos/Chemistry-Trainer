@@ -22,7 +22,7 @@ public class Starter : MonoBehaviour
             new StartGameInitializePresenter(GameModel, GameView),
             new InitializeCollectionOfReactionsPresenter(GameModel, GameView),
             new InitializeCollectionOfConteinersPresenter(GameModel, GameView),
-            new AddConteinerPresenter(GameModel, GameView),
+            new AddContainerPresenter(GameModel, GameView),
             
             new CheckingConteinerHoverPresenter(GameModel, GameView),
             new TiltingConteinerPresenter(GameModel, GameView),

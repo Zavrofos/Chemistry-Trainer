@@ -31,7 +31,7 @@ namespace GameModelDir
             }
             
             _gameModel.CollectionsOfReactions.Initialize();
-            _gameModel.CollectionOfConteiners.Initialize();
+            _gameModel.CollectionOfContainers.Initialize();
         }
     }
 }

@@ -6,14 +6,14 @@ namespace Conteiners
 {
     public class CollectionOfConteiners
     {
-        public Dictionary<int, Conteiner> ConteinersMap;
+        public Dictionary<int, Container> ConteinersMap;
         public event Action Initialized;
-        public event Action<ConteinerView> AddedConteiner;
+        public event Action<ConteinerView> AddedContainer;
         public int IdCount = 0;
 
         public CollectionOfConteiners()
         {
-            ConteinersMap = new Dictionary<int, Conteiner>();
+            ConteinersMap = new Dictionary<int, Container>();
         }
 
         public void Initialize()
@@ -23,7 +23,7 @@ namespace Conteiners
 
         public void AddConteiner(ConteinerView conteiner)
         {
-            AddedConteiner?.Invoke(conteiner);
+            AddedContainer?.Invoke(conteiner);
         }
     }
 }

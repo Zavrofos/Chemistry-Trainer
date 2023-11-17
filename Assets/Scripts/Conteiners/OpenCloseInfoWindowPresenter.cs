@@ -2,25 +2,25 @@
 {
     public class OpenCloseInfoWindowPresenter : IPresenter
     {
-        private readonly Conteiner _conteinerModel;
+        private readonly Container _containerModel;
         private readonly ConteinerView _conteinerView;
 
-        public OpenCloseInfoWindowPresenter(Conteiner conteinerModel, ConteinerView conteinerView)
+        public OpenCloseInfoWindowPresenter(Container containerModel, ConteinerView conteinerView)
         {
-            _conteinerModel = conteinerModel;
+            _containerModel = containerModel;
             _conteinerView = conteinerView;
         }
         
         public void Subscribe()
         {
-            _conteinerModel.OpenedInfoWindow += OnOpenInfoWindow;
-            _conteinerModel.CloseInfoWindow += OnCloseInfoWindow;
+            _containerModel.OpenedInfoWindow += OnOpenInfoWindow;
+            _containerModel.CloseInfoWindow += OnCloseInfoWindow;
         }
 
         public void UnSubscribe()
         {
-            _conteinerModel.OpenedInfoWindow -= OnOpenInfoWindow;
-            _conteinerModel.CloseInfoWindow -= OnCloseInfoWindow;
+            _containerModel.OpenedInfoWindow -= OnOpenInfoWindow;
+            _containerModel.CloseInfoWindow -= OnCloseInfoWindow;
         }
 
         private void OnOpenInfoWindow()

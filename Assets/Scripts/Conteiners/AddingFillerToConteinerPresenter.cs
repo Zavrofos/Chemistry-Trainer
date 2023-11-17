@@ -6,11 +6,11 @@ namespace Conteiners
 {
     public class AddingFillerToConteinerPresenter : IPresenter
     {
-        private readonly Conteiner _model;
+        private readonly Container _model;
         private readonly ConteinerView _view;
         private readonly GameModel _gameModel;
 
-        public AddingFillerToConteinerPresenter(Conteiner model, ConteinerView view, GameModel gameModel)
+        public AddingFillerToConteinerPresenter(Container model, ConteinerView view, GameModel gameModel)
         {
             _model = model;
             _view = view;

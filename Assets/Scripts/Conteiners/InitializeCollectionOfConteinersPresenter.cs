@@ -16,19 +16,19 @@ namespace Conteiners
         
         public void Subscribe()
         {
-            _gameModel.CollectionOfConteiners.Initialized += OnInitialize;
+            _gameModel.CollectionOfContainers.Initialized += OnInitialize;
         }
 
         public void UnSubscribe()
         {
-            _gameModel.CollectionOfConteiners.Initialized -= OnInitialize;
+            _gameModel.CollectionOfContainers.Initialized -= OnInitialize;
         }
 
         private void OnInitialize()
         {
             foreach (var conteinerView in _gameView.InitialConteiners)
             {
-                _gameModel.CollectionOfConteiners.AddConteiner(conteinerView);
+                _gameModel.CollectionOfContainers.AddConteiner(conteinerView);
             }
 
             InitializeTextInfo();
@@ -36,7 +36,7 @@ namespace Conteiners
         
         private void InitializeTextInfo()
         {
-            foreach (var value in _gameModel.CollectionOfConteiners.ConteinersMap.Values)
+            foreach (var value in _gameModel.CollectionOfContainers.ConteinersMap.Values)
             {
                 value.DisplayInfoText();
             }

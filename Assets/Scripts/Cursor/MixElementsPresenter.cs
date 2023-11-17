@@ -30,8 +30,8 @@ namespace Cursor
             ConteinerView conteinerViewTarget = _gameModel.CursorModel.TargetAtGunPoint.GetComponent<ConteinerView>();
             ConteinerView conteinerViewSelected = _gameModel.CursorModel.SelectedTarget.GetComponent<ConteinerView>();
 
-            var conteiners = _gameModel.CollectionOfConteiners.ConteinersMap[conteinerViewSelected.Id];
-            _gameModel.CollectionOfConteiners.ConteinersMap[conteinerViewTarget.Id].AddElement(conteiners.CurrentElements);
+            var conteiners = _gameModel.CollectionOfContainers.ConteinersMap[conteinerViewSelected.Id];
+            _gameModel.CollectionOfContainers.ConteinersMap[conteinerViewTarget.Id].AddElement(conteiners.CurrentElements);
             conteiners.EmptyCapacity();
             conteiners.ReturnToInitialPosition();
         }
