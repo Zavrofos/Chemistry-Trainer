@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Effects;
@@ -11,11 +12,13 @@ namespace Reactions
     {
         private readonly GameModel _gameModel;
         private readonly GameView _gameView;
+        private readonly Dictionary<Reaction, List<IPresenter>> _reactionsPresenters;
 
         public InitializeCollectionOfReactionsPresenter(GameModel gameModel, GameView gameView)
         {
             _gameModel = gameModel;
             _gameView = gameView;
+            _reactionsPresenters = new Dictionary<Reaction, List<IPresenter>>();
         }
         
         public void Subscribe()
@@ -32,8 +35,22 @@ namespace Reactions
         {
             foreach (var reactionDesc in _gameView.ReactionsInfo)
             {
-                _gameModel.CollectionsOfReactions.ReactionsMap.Add(CreateKey(reactionDesc.Elements), 
-                    new Reaction(reactionDesc.Elements, reactionDesc.ResultElements, CreateEffects(reactionDesc.Effects)));
+                Reaction newReaction = new Reaction(reactionDesc.Elements, reactionDesc.ResultElements,
+                    CreateEffects(reactionDesc.Effects));
+
+                _gameModel.CollectionsOfReactions.ReactionsMap.Add(CreateKey(reactionDesc.Elements), newReaction);
+
+                List<IPresenter> presenters = new()
+                {
+                    new StartReactionsPresenter(newReaction, _gameModel)
+                };
+
+                foreach (var presenter in presenters)
+                {
+                    presenter.Subscribe();
+                }
+                
+                _reactionsPresenters.Add(newReaction, presenters);
             }
         }
         

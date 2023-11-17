@@ -1,4 +1,5 @@
-﻿using GameModelDir;
+﻿using CapacityDir;
+using GameModelDir;
 using UnityEngine;
 
 namespace Effects
@@ -14,7 +15,10 @@ namespace Effects
         
         public void SetEffect(GameModel model)
         {
-            
+            if(model.CursorModel.TargetAtGunPoint.TryGetComponent(out ConteinerView conteiner))
+            {
+                conteiner.Filler.material.color = Color;
+            }
         }
     }
 }

@@ -60,7 +60,7 @@ namespace CapacityDir
                 }
                 
                 _model.CurrentElements = newElements;
-                _gameModel.CollectionsOfReactions.ReactionsMap[key].StartReaction(_view);
+                _gameModel.CollectionsOfReactions.ReactionsMap[key].StartReaction();
             }
 
             if (changed)
