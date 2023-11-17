@@ -25,6 +25,9 @@ namespace CapacityDir
         public event Action EmptiedCapacity;
         public event Action ReturnedToInitialPosition;
 
+        public event Action<Renderer> AddedFiller;
+        public event Action RemovedFiller;
+
         public Conteiner(int id, List<ElementDescr> currentElement, Vector3 initialPositin, Quaternion initialRotation,
             LayerMask initialLayer, Vector3 rotationTilt, Vector3 pointPositionTilt)
         {
@@ -67,6 +70,16 @@ namespace CapacityDir
         public void ReturnToInitialPosition()
         {
             ReturnedToInitialPosition?.Invoke();
+        }
+
+        public void AddFiller(Renderer filler)
+        {
+            AddedFiller?.Invoke(filler);
+        }
+
+        public void RemoveFiller()
+        {
+            RemovedFiller?.Invoke();
         }
     }
 }

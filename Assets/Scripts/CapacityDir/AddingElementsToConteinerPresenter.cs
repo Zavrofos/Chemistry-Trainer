@@ -34,6 +34,12 @@ namespace CapacityDir
         private void OnAddNewElements(List<ElementDescr> elements)
         {
             _model.PreviousElements.Clear();
+            
+            if (_model.CurrentElements.Count == 0)
+            {
+                ConteinerView selectedConteiner = _gameModel.CursorModel.SelectedTarget.GetComponent<ConteinerView>();
+                _gameModel.CollectionOfConteiners.ConteinersMap[_view.Id].AddFiller(selectedConteiner.Filler);
+            }
 
             foreach (var element in elements)
             {
